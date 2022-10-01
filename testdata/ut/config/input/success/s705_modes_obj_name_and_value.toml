@@ -1,0 +1,10 @@
+##################################################################################################
+## Mode change descriptor for an object identified by name and value.
+##
+[[modes]]
+trigger = "object"
+name = "my_obj"
+value = "CLY*01*"
+enabled = [ "traces" ]
+buffered = [ "traces" ]
+scope = "process"

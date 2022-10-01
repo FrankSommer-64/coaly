@@ -1,0 +1,177 @@
+# ================================  ERRORS  ================================
+# ---------- Allgemeine Fehler ----------
+E-FileNotFound Datei %s nicht gefunden.
+E-FileReadError Fehler beim Lesen der Datei %s. %s.
+E-FileWriteError Fehler beim Schreiben der Datei %s. %s.
+E-FileCreationError Datei %s konnte nicht erzeugt werden: %s.
+E-Int-InvalidResourceTemplate Interner Fehler: Kann keine thread-spezifische Resource von einem Nicht-Template erzeugen.
+E-Int-NotYetImplemented Funktionalität ist noch nicht implementiert.
+E-Int-EventFailed Interner Fehler, konnte Event nicht an Worker-Thread senden: %s.
+E-Int-EventsFailed Interner Fehler, konnte %s Events nicht an Worker-Thread senden. Letzter Fehler: %s.
+E-Net-InvalidUrl Die URL "%s" ist ungültig.
+E-Net-SocketCreationError Socket zu Adresse %s konnte nicht erzeugt werden: %s.
+E-Net-SocketReadError Fehler beim Lesen von Socket (lokal=%s, remote=%s): %s.
+E-Net-SocketWriteError Fehler beim Schreiben auf Socket (lokal=%s, remote=%s): %s.
+E-DeserializationError Fehler beim Deserialisieren der Datenstruktur %s.
+E-AccessDeniedByServer Logging-Server unter Adresse %s verweigerte den Zugriff: %s.
+E-ConnectProtocolError Unerwartete Nachricht von Logging-Server unter Adresse %s: AccessGranted oder AccessDenied erwartet.
+E-MessageTooShort Empfangenes Netzwerk-Paket ist zu kurz für eine Coaly-Message.
+E-MessageSizeMismatch Empfangenes Netzwerk-Paket mit %s Bytes passt nicht zur enthaltenen Payload-Größe von %s Bytes.
+E-Net-InvalidAddressPattern %s ist kein gültiges Pattern für eine IP Socket-Adresse.
+E-Net-IP4OctetTooLarge Wert %s ist zu groß für ein Segment einer IP4-Adresse.
+E-Net-IPPortTooLarge Wert %s ist zu groß für einen IP4-Port.
+E-Net-AlreadyConnected Verbindungsaufbau zu %s fehlgeschlagen. Resource ist bereits verbunden.
+# ---------- TOML scanner errors ----------
+E-Cfg-Toml-DigitDelimiterNotEmbedded Zeile %s, Spalte %s: Trennzeichen %s muss von Ziffern umgeben sein.
+E-Cfg-Toml-DigitExpected Zeile %s, Spalte %s: Ziffer erwartet, aber %s gefunden.
+E-Cfg-Toml-EmptyFloatFract Zeile %s, Spalte %s: Zahl %s muss mindestens eine Nachkommastelle enthalten. 
+E-Cfg-Toml-FourDigitYearRequired Zeile %s, Spalte %s: Jahresangabe vor %s muss aus vier Ziffern bestehen.
+E-Cfg-Toml-InvalidChar Zeile %s, Spalte %s: Ungültiges Zeichen %s.
+E-Cfg-Toml-InvalidControlChar Zeile %s, Spalte %s: Ungültiges Steuerzeichen %s.
+E-Cfg-Toml-InvalidDate Zeile %s, Spalte %s: Ungültiges Datum oder Datum/Uhrzeit.
+E-Cfg-Toml-InvalidEscapeChar Zeile %s, Spalte %s: Zeichen %s ist nach dem Escape-Zeichen nicht erlaubt.
+E-Cfg-Toml-InvalidFloatExp Zeile %s, Spalte %s: Ungültiger Exponent in Zahl %s.
+E-Cfg-Toml-InvalidKeyStart Zeile %s, Spalte %s: Key darf nicht mit Zeichen %s beginnen.
+E-Cfg-Toml-InvalidLineEndingEscape Zeile %s, Spalte %s: Zeichen %s ist nach einem line ending backslash nicht erlaubt.
+E-Cfg-Toml-InvalidNumChar Zeile %s, Spalte %s: Zeichen %s innerhalb einer Zahl ist hier nicht erlaubt.
+E-Cfg-Toml-InvalidNumDateTimeChar Zeile %s, Spalte %s: Zeichen %s innerhalb einer Zahl oder Datum/Uhrzeit ist hier nicht erlaubt.
+E-Cfg-Toml-InvalidRadixPrefix Zeile %s, Spalte %s: Als Radix-Kennung sind nur 0b, 0o oder 0x zulässig.
+E-Cfg-Toml-InvalidTime Zeile %s, Spalte %s: Uhrzeit-Angabe in %s muss im Format hh:mm:ss[,u] erfolgen.
+E-Cfg-Toml-InvalidUnicodeEscapeChar Zeile %s, Spalte %s: Zeichen %s ist in Unicode-Escape-Sequenzen nicht erlaubt.
+E-Cfg-Toml-InvalidUnicodeEscapeSeq Zeile %s, Spalte %s: Ungültige Unicode-Escape-Sequenz %s.
+E-Cfg-Toml-InvalidValue Zeile %s, Spalte %s: Ungültiger Wert %s.
+E-Cfg-Toml-InvalidValueStart Zeile %s, Spalte %s: Ein Wert darf nicht mit %s beginnen.
+E-Cfg-Toml-LeadingZeroNotAllowed Zeile %s, Spalte %s: Zahl mit führender %s ist nicht erlaubt.
+E-Cfg-Toml-LineTermInSingleLineString Zeile %s, Spalte %s: Zeilenumbruch %s ist in einfachen Strings nicht erlaubt.
+E-Cfg-Toml-TimezoneOrMillisExpected Zeile %s, Spalte %s: Zeitzone oder Millisekunden erwartet.
+E-Cfg-Toml-TooManyQuotes Zeile %s, Spalte %s: Mehr als drei aufeinanderfolgende String-Begrenzungszeichen %s.
+E-Cfg-Toml-TwoDigitDayRequired Zeile %s, Spalte %s: Ungültige Datum-Angabe, Tag muss aus zwei Ziffern bestehen.
+E-Cfg-Toml-TwoDigitHourRequired Zeile %s, Spalte %s: Ungültige Uhrzeit-Angabe, Stunde vor %s muss aus zwei Ziffern bestehen.
+E-Cfg-Toml-TwoDigitMonthRequired Zeile %s, Spalte %s: Ungültige Datum-Angabe, Monat muss aus zwei Ziffern bestehen.
+E-Cfg-Toml-UnterminatedString Zeile %s, Spalte %s: Hier beginnender String ist nicht durch Begrenzungszeichen abgeschlossen.
+# ---------- TOML parser errors ----------
+E-Cfg-Toml-ClosingBracketExpected Line %s: Schließende eckige Klammer(n) erwartet.
+E-Cfg-Toml-CommaExpected Zeile %s, Spalte %s: Komma erwartet, aber %s gefunden.
+E-Cfg-Toml-CommaOrRBraceExpected Zeile %s, Spalte %s: Komma oder schließende geschweifte Klammer erwartet, aber %s gefunden.
+E-Cfg-Toml-DuplicateSeparatorToken Zeile %s, Spalte %s: Zwei aufeinanderfolgende Kommata sind nicht erlaubt.
+E-Cfg-Toml-EqualExpected Line %s: Nach dem Key muss ein Gleichheitszeichen folgen.
+E-Cfg-Toml-InvalidArrayToken Zeile %s, Spalte %s: %s ist innerhalb eines Werte-Arrays nicht erlaubt.
+E-Cfg-Toml-InvalidKeyTermination Line %s: Nach dem Key wurde %s erwartet, aber %s gefunden.
+E-Cfg-Toml-KeyAlreadyInUse Line %s: Key %s wurde bereits explizit definiert.
+E-Cfg-Toml-KeyExpected Line %s, colum %s: Nach der öffnenden eckigen Klammer wurde ein Key erwartet, aber %s gefunden.
+E-Cfg-Toml-KeyOrTableExpected Zeile %s, Spalte %s: Key, Table oder Array of tables erwartet, aber %s gefunden.
+E-Cfg-Toml-KeyUsedForArrayOfTables Line %s: Key %s wird bereits für ein Array of tables verwendet.
+E-Cfg-Toml-KeyUsedForSimpleValue Line %s: Key %s wird bereits für einen Wert verwendet.
+E-Cfg-Toml-KeyUsedForTable Line %s: Key %s wird bereits für eine Table verwendet.
+E-Cfg-Toml-KeyUsedForValueArray Line %s: Key %s wird bereits für ein Werte-Array verwendet.
+E-Cfg-Toml-LeadingSeparator Zeile %s, Spalte %s: Der Inhalt einer Inline Table oder eines Arrays darf nicht mit einem Komma beginnen.
+E-Cfg-Toml-NoLineBreakAfterKeyValuePair Line %s: Key-Value-Definition muss mit einem Zeilenumbruch abgeschlossen werden.
+E-Cfg-Toml-NoLineBreakAfterHeader Line %s: Table-Name muss mit einem Zeilenumbruch abgeschlossen werden.
+E-Cfg-Toml-NotATable Line %s: Key %s wird nicht für eine Table verwendet.
+E-Cfg-Toml-TableExists Line %s: Table %s wurde bereits definiert.
+E-Cfg-Toml-TrailingDotInKey Zeile %s, Spalte %s: Name eines Keys darf nicht mit einem Punkt enden.
+E-Cfg-Toml-TrailingSeparator Zeile %s, Spalte %s: In einer Inline-Table ist ein abschließendes Komma nicht erlaubt.
+E-Cfg-Toml-TwoDotsWithinKey Zeile %s, Spalte %s: Zwei aufeinanderfolgende Punkte in einem Key sind nicht erlaubt.
+E-Cfg-Toml-UnexpectedKeyToken Zeile %s, Spalte %s: Zeichen %s ist in einem Key nicht erlaubt.
+E-Cfg-Toml-UnseparatedArrayItems Zeile %s, Spalte %s: Die Elemente in einem Array items müssen durch Kommata getrennt werden.
+E-Cfg-Toml-UnseparatedKeyParts Zeile %s, Spalte %s: Die Teile eines Keys müssen durch Punkte getrennt werden.
+E-Cfg-Toml-UnterminatedArray Zeile %s, Spalte %s: Value array starting here is not terminated.
+E-Cfg-Toml-UnterminatedInlineTable Zeile %s, Spalte %s: Hier beginnende Inline-Table wurde nicht durch eine schließende Klammer abgeschlossen.
+E-Cfg-Toml-ValueExpected Zeile %s, Spalte %s: Wertangabe erwartet.
+E-Cfg-Toml-WhitespaceBetweenBrackets Zeile %s, Spalte %s: Öffnende eckige Klammern müssen unmittelbar aufeinander folgen.
+E-Cfg-Toml-ParseFailed Datei %s konnte nicht verarbeitet werden. %s
+E-Cfg-FoundIssues Die Konfigurationsdatei %s konnte nicht fehlerfrei verarbeitet werden:
+E-Rovr-Failed Rollover für Datei %s fehlgeschlagen: %s. Aktuelle Ausgabedatei wird weiter verwendet.
+E-Rovr-OpenInputFileFailed Fehler beim Lesen der Log-Datei %s für Rollover: %s.
+E-Rovr-OpenOutputFileFailed Fehler beim Öffnen der Ausgabedatei %s für Rollover: %s.
+E-Rovr-WriteOutFileFailed Fehler beim Schreiben der Ausgabedatei %s für Rollover: %s.
+W-Rovr-RemoveFileFailed Fehler beim Löschen der Rollover-Datei %s: %s.
+E-Rovr-RenameFileFailed Fehler beim Umbenennen der Ausgabedatei %s auf %s für Rollover: %s.
+W-Rovr-CompressFailed Konnte Inhalt der Log-Datei %s nicht für Rollover komprimieren: %s.
+W-Rovr-GenericFailure Rollover fehlgeschlagen: %s.
+W-Rovr-GenericFileFailure Rollover-Verarbeitung für Datei %s fehlgeschlagen: %s.
+W-Rovr-UsingOldOutputFile Rollover auf neue Datei %s fehlgeschlagen (%s). Benutze weiterhin Datei %s.
+E-Cfg-InvalidNetworkProtocol Ungültiges Netzwerk-Protokoll "%s". Erlaubt sind "tcp" und "udp".
+E-Cfg-NetworkProtocolMismatch Netzwerk-Protokolle für lokale und entfernte Adresse müssen identisch sein.
+# ---------- Server errors ----------
+E-Srv-CfgFileNotSpecified Für einen Logging-Server muss der Name einer Konfigurationsdatei angegeben werden.
+E-Srv-PropertiesMissing Server properties fehlen in der Konfigurationsdatei %s.
+E-Srv-InvalidDataAddress Die Data-Listen-Adresse "%s" ist ungültig.
+E-Srv-InvalidDataAddressInFile Die Data-Listen-Adresse "%s" in der Konfigurationsdatei %s ist ungültig.
+E-Srv-AccessDenied Zugriff auf Logging-Server verweigert.
+E-Srv-ClientLimitExceeded Logging-Server hat die maximale Anzahl von Client-Verbindungen überschritten.
+E-Srv-InternalError Interner Fehler im Logging-Server.
+E-Srv-AcceptConnectionFailed Verbindung von Client konnte nicht hergestellt werden: %s.
+# ================================ WARNINGS ================================
+W-Cfg-UnknownKey Zeile %s: Unbekannter Parameter %s wurde ignoriert.
+W-Cfg-KeyIsNotAString Zeile %s: Für Parameter "%s" muss ein String-Wert angegeben werden.
+W-Cfg-KeyIsNotATable Zeile %s: Parameter "%s" ist nicht einer TOML table zugeordnet. Verwende Default-Einstellungen für die gesamte Gruppe.
+W-Cfg-KeyIsNotAnArray Zeile %s: Parameter "%s" ist nicht einem TOML array zugeordnet.
+W-Cfg-NumberRequired Zeile %s: Für Parameter "%s" muss ein ganzzahliger Wert zwischen %s und %s angegeben werden. Verwende Default-Wert %s.
+W-Cfg-InvalidLevelIdChar Zeile %s: ID für Record-Level "%s" muss genau ein Zeichen enthalten. Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-EmptyLevelName Zeile %s: Name für Record-Level "%s" darf nicht leer sein. Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-InvalidLevelName Zeile %s: Name für Record-Level "%s" muss als String angegeben werden. Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-InvalidLevel Zeile %s: Unbekannter Record-Level "%s" für Parameter "%s". Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-InvalidLevelReference Zeile %s: Unbekannter Record-Level "%s" für Parameter "%s". Verwende Default-Einstellung.
+W-Cfg-DuplicateLevel Zeile %s: Mehrfach angegebener Record-Level "%s" für Parameter "%s" ignoriert.
+W-Cfg-InvalidLevelAttribute Zeile %s: Unbekannter Parameter "%s" für Record-Level "%s". Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-DuplicateLevelValue Zeile %s: ID "%s" oder Name "%s" für Record-Level "%s" wird bereits verwendet. Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-DuplicateLevelValues Zeile %s: Eine angegebene ID oder ein Name für einen Record-Level kollidiert mit einem Default-Wert. Verwende Default-Einstellungen für alle Record-Level.
+W-Cfg-InvalidTrigger Zeile %s: Unbekannter Record-Trigger "%s" für Parameter "%s" ignoriert.
+W-Cfg-DuplicateTrigger Zeile %s: Mehrfach angegebener Record-Trigger "%s" für Parameter "%s" ignoriert.
+W-Cfg-InvalidRolloverFileSize %s ist keine gültige Angabe für die maximale Dateigröße für ein Rollover.
+W-Cfg-InvalidRolloverAttribute Zeile %s: Unbekanntes Attribut %s für Rollover-Policy %s. Erlaubt sind compression, keep und trigger.
+W-Cfg-MissingRolloverCondition Zeile %s: Keine Bedingung für Rollover-Policy "%s" angegeben. Policy ignoriert.
+W-Cfg-InvalidRolloverCondition Zeile %s: Ungültige Bedingung für Rollover-Policy "%s": %s. Policy ignoriert.
+W-Cfg-InvalidRolloverCondPattern Bedingung "%s" entspricht nicht dem benötigten Muster (size > number oder every [n] interval [at moment].
+W-Cfg-CompressionNotSupported Line %s: Die Coaly Core-Bibliothek unterstützt keine Komprimierung. 
+W-Cfg-InvalidCompressionAlgorithm Zeile %s: Unbekannter Kompressionsalgorithmus %s. Verwende Default-Wert %s.
+W-Cfg-UnknownCompressionAlgorithm Unbekannter Kompressionsalgorithmus %s.
+W-Cfg-InvalidKeepCount Zeile %s: Anzahl aufzubewahrender alter Dateien für Rollover-Policy %s muss zwischen %s und %s liegen. Verwende Default-Wert %s.
+W-Cfg-MissingKeepCount Zeile %s: Anzahl aufzubewahrender alter Dateien für Rollover-Policy %s nicht angegeben. Verwende Default-Wert %s.
+W-Cfg-InvalidBufferAttribute Zeile %s: Unbekanntes Attribut "%s" für Buffer-Policy "%s". Erlaubt sind "flush" und "size".
+W-Cfg-MissingBufferContentSize Zeile %s: Kein gültiger Wert für die Größe des Buffer-Inhalts für Buffer-Policy "%s" angegeben. Policy ignoriert.
+W-Cfg-MissingBufferIndexSize Zeile %s: Kein gültiger Wert für die Größe des Record-Index für Buffer-Policy "%s" angegeben. Verwende Default-Wert %s.
+W-Cfg-InvalidSizeSpecification Zeile %s: Ungültige Größenangabe "%s" für Parameter "%s". Verwende Default-Wert %s.
+W-Cfg-InvOrMissingBufferFlushSpecification Zeile %s: Keine gültigen Flush-Events für Buffer-Policy "%s" angegeben. Policy ignoriert.
+W-Cfg-RecLenExceedsSize Zeile %s: Maximale Record-Länge für Buffer-Policy "%s" überschreitet die Buffer-Größe. Verwende Buffer-Größe %s.
+W-Cfg-UnknownBufferFlushCondition Unbekannte Flush-Bedingung "%s".
+W-Cfg-InvalidBufferFlushCondition Zeile %s: Ungültige Flush-Bedingung "%s" für Buffer-Policy "%s" ignoriert.
+W-Cfg-DuplicateBufferFlushCondition Zeile %s: Mehrfach angegebene Flush-Bedingung "%s" für Buffer-Policy "%s" ignoriert.
+W-Cfg-InvalidNumberInInterval Ungültige Zahl %s in Intervall-Definition.
+W-Cfg-InvalidUnitInInterval Ungültige Einheit "%s" in Intervall-Definition.
+W-Cfg-InvalidRecordFormatHeader Zeile %s: Output-Format "%s" nicht in einem TOML array of tables definiert. Format ignoriert.
+W-Cfg-InvalidRecordFormatSpecification Zeile %s: Für Output-Format "%s" fehlt mindestens eines der Pflicht-Attribute levels, triggers und items. Format ignoriert.
+W-Cfg-InvalidDateTimeFormatAttribute Zeile %s: Unbekanntes Attribut "%s" für Date-Time-Format "%s" ignoriert. Erlaubt sind date, time und timestamp.
+W-Cfg-InvalidDateTimeFormatSpecifier Zeile %s: Ungültige Variable "%s" in Date-Time-Format "%s". Format ignoriert.
+W-Cfg-OutputFormatTriggersEmpty Zeile %s: Trigger-Liste für Output-Format "%s" ist leer. Einzelformat ignoriert.
+W-Cfg-OutputFormatLevelsEmpty Zeile %s: Levels-Liste für Output-Format "%s" ist leer. Einzelformat ignoriert.
+W-Cfg-InvalidModesHeader Zeile %s: Modes müssen in einem TOML array of tables definiert werden.
+W-Cfg-InvalidModeAttribute Zeile %s: Unbekanntes Attribut %s für Mode ignoriert. Erlaubt sind trigger, name, value, buffered, enabled und scope.
+W-Cfg-InvalidScope Zeile %s: Ungültiger Scope %s. Scope für einen Mode muss als String mit Wert process oder thread angegeben werden. Verwende Default-Wert thread.
+W-Cfg-InvalidModeSpecification Zeile %s: Mode fehlt mindestens eines der Pflicht-Attribute trigger, name/value, enabled, buffered und scope. Mode ignoriert.
+W-Cfg-InvalidModeTrigger Zeile %s: Ungültiger Mode-Change-Trigger %s. Mode ignoriert.
+W-Cfg-MissingModeName Zeile %s: Für die Mode-Change-Trigger function und module muss Parameter "name" angegeben werden. Mode ignoriert.
+W-Cfg-ModeValueIgnored Zeile %s: Parameter "value" für Mode-Change-Trigger function oder module ignoriert.
+W-Cfg-ModeScopeIgnored Zeile %s: Scope für Mode-Change-Trigger function oder module ist immer "thread", Parameter "scope" ignoriert.
+W-Cfg-InvalidResourcesHeader Zeile %s: Resources müssen in einem TOML array of tables definiert werden.
+W-Cfg-InvalidResourceAttribute Zeile %s: Unbekanntes Attribut "%s" für Resource ignoriert. Erlaubt sind kind, scope, name, levels, buffer, output_format, size und url.
+W-Cfg-InvalidResourceKind Zeile %s: "%s" ist kein gültiger kind für eine Resource.
+W-Cfg-InvalidResourceScope Zeile %s: "%s" ist kein gültiger regulärer Ausdruck für die Application Names zur Resource.
+W-Cfg-InvalidResourceSpecification Zeile %s: Kind und mindestens ein Record-Level müssen zu einer Resource angegeben werden. Resource ignoriert.
+W-Cfg-InvalidResourceUrl Zeile %s: Keine gültige URL für eine Netzwerk-Resource angegeben. Resource ignoriert.
+W-Cfg-ResourceFileNameMissing Zeile %s: Kein Dateiname für eine Datei-Resource angegeben, Resource ignoriert.
+W-Cfg-FileSizeMissing Zeile %s: Bei Memory-Mapped-Files muss die Dateigröße angegeben werden, Resource ignoriert.
+W-Cfg-RecordFormatIncomplete Zeile %s: In Record-Format "%s" fehlen items für die folgenden Trigger/Level-Kombinationen: %s. Verwende Default-Werte für die fehlenden Kombinationen.
+W-Cfg-AnchorMinuteRequired Ungültiger Intervall-Zeitpunkt "%s", muss als Minute zwischen 0 und 59 angegeben werden
+W-Cfg-AnchorHourMinRequired Ungültiger Intervall-Zeitpunkt "%s", muss im Format HH:MM angegeben werden, HH zwischen 00 und 23, MM zwischen 0 und 59
+W-Cfg-AnchorDowHourMinRequired Ungültiger Intervall-Zeitpunkt "%s", muss im Format Wochentag HH:MM angegeben werden, Wochtentag zwischen monday und sunday, HH zwischen 00 und 23, MM zwischen 0 und 59
+W-Cfg-AnchorDomHourMinRequired Ungültiger Intervall-Zeitpunkt "%s", muss im Format DD HH:MM angegeben werden, DD zwischen 1 und 31 oder ultimo, HH zwischen 00 und 23, MM zwischen 0 und 59
+W-Cfg-AnchorNotAllowed Intervall-Zeitpunkt "%s" ist für die Units Sekunde und Minute nicht erlaubt
+W-Cfg-MeaninglessResourcePar Zeile %s: Parameter "%s" hat für eine Resource des Typs "%s" keine Bedeutung. Parameter ignoriert.
+W-Cfg-MeaninglessRolloverAttr Zeile %s: Rollover-Bedingung "never" benötigt keine weiteren Attribute .
+W-Cfg-AnonymousObserverIgnored Zeile %s: Weder Name noch Value für Observer angegeben. Mode-Change ignoriert.
+W-Cfg-InvalidObserverName Zeile %s: Observer-Name %s ist kein gültiger regulärer Ausdruck. Mode-Change ignoriert.
+W-Cfg-InvalidObserverValue Zeile %s: Observer-Value %s ist kein gültiger regulärer Ausdruck. Mode-Change ignoriert.
+W-Cfg-InvalidFallbackPath %s ist kein gültiger absoluter Pfad, nicht beschreibbar oder konnte nicht angelegt werden. Verwende %s als Fallback-Verzeichnis.
+W-Cfg-InvalidOutputPath %s ist kein gültiger absoluter Pfad, nicht beschreibbar oder konnte nicht angelegt werden. Verwende %s als Ausgabe-Verzeichnis.

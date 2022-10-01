@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to module
+##
+[system]
+  [system.mode]
+  enabled = ["module"]
+  buffered = [ "module" ]

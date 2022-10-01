@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, file name not specified for memory mapped file
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+size = "32m"

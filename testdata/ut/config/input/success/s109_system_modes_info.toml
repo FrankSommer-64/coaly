@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to info
+##
+[system]
+  [system.mode]
+  enabled = ["info"]
+  buffered = [ "info" ]

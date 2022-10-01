@@ -1,0 +1,2 @@
+{GO:[]/LO:[]/LU:[{SC:thread/K:function/N:my_func/V:-/ENA:11111111111111111111111111111111/BUF:1000}]}
+Line 8: Unknown attribute duration for mode specification ignored. Allowed are trigger, name, value, buffered, enabled and scope.

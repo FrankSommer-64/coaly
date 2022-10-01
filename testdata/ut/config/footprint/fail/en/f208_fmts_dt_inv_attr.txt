@@ -1,0 +1,2 @@
+DEF:{N:/DT:-/TM:-/TS:-}/CUST:{my_default:N:my_default/DT:-/TM:%H:%M:%S/TS:-}
+Line 6: Unknown attribute "DATE" for date time format "my_default" ignored. Allowed are date, time and timestamp.

@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, invalid kind specified
+##
+[[resources]]
+kind = "printer"
+levels = [ "error" ]

@@ -1,0 +1,3 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:
+Line 6: Unknown record level "custom" for parameter "resources.levels".
+Line 4: Kind and at least one record level must be specified for a resource. Resource ignored.

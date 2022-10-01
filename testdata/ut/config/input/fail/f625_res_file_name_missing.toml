@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, file name not specified
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]

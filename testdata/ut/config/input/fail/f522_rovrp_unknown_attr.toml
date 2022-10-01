@@ -1,0 +1,8 @@
+##################################################################################################
+## Rollover policy with an unknown attribute.
+##
+[policies.rollover.my_default]
+condition = "size > 20m"
+keep = 9
+compression = ""
+timeout = 60

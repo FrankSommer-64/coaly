@@ -1,0 +1,2 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:
+Line 3: For memory mapped files the size specification is mandatory, resource ignored.

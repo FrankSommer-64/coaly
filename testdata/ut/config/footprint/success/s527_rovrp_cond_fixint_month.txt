@@ -1,0 +1,1 @@
+DEF:{N:default/COND:SZ:20971520/KEEP:9/CMPR:none}/CUST:{my_default:N:my_default/COND:INT:TS:U:month/V:1/A:MD:31/WD:0/HR:23/MI:59/KEEP:9/CMPR:none}

@@ -1,0 +1,5 @@
+##################################################################################################
+## Fallback root directory is not writable
+##
+[system]
+  fallback_path = "$Env[TESTING_ROOT]/readonly"

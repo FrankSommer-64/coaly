@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to critical
+##
+[system]
+  [system.mode]
+  enabled = ["critical"]
+  buffered = [ "critical" ]

@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy second interval with moment.
+##
+[policies.rollover.my_default]
+condition = "every 10 seconds at 1"
+keep = 9
+compression = ""

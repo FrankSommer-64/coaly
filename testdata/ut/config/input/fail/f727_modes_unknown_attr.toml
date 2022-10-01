@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor, unknown attribute
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+buffered = [ "error" ]
+duration = 60

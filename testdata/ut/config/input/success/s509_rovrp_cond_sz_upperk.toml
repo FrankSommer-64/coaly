@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with size condition and size limit in KBytes, uppercase K.
+##
+[policies.rollover.my_default]
+condition = "size > 512K"
+keep = 9
+compression = ""

@@ -1,0 +1,2 @@
+# Inline table: two separators between key-value-pairs
+inline_table = {x=2, ,y=true}

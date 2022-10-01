@@ -1,0 +1,2 @@
+DEF:{N:default/COND:SZ:20971520/KEEP:9/CMPR:none}/CUST:{my_default:N:my_default/COND:SZ:20971520/KEEP:9/CMPR:none}
+Line 4: Number of old files to keep for rollover policy "my_default" not specified. Using default value 9.

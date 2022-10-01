@@ -1,0 +1,16 @@
+##################################################################################################
+## Output format with missing object level in all triggers.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "message" ]
+  levels = [ "emergency", "alert", "critical", "error", "warning", "notice", "info", "module", "debug" ]
+  items = ""
+  [[formats.output.my_format]]
+  triggers = [ "creation" ]
+  levels = [ "function", "module" ]
+  items = ""
+  [[formats.output.my_format]]
+  triggers = [ "drop" ]
+  levels = [ "function", "module" ]
+  items = ""

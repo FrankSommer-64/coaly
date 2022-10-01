@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor, scope not string value
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+buffered = [ "error" ]
+scope = 333

@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor for a module with change for buffered and enabled levels.
+##
+[[modes]]
+trigger = "module"
+name = "my_module"
+enabled = [ "error" ]
+buffered = [ "traces" ]
+scope = "thread"

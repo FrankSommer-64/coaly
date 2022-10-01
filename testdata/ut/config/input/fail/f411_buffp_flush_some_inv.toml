@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with an invalid flush condition among valid ones.
+##
+[policies.buffer.my_default]
+flush = [ "error", "exit", "sometimes" ]
+content_size = "32M"
+index_size = "1M"

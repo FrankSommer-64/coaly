@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor for modukle, name attribute missing
+##
+[[modes]]
+trigger = "module"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

@@ -1,0 +1,15 @@
+##################################################################################################
+## Invalid types for all possible system properties
+##
+[system]
+  version = { value = 1.0 }
+  app_id = false
+  app_name = true
+  change_stack_size = "Hello"
+  output_path = [ 22 ]
+  fallback_path = 23
+  [system.levels]
+  debug = "on"
+  [system.mode]
+  enabled = true
+  buffered = false

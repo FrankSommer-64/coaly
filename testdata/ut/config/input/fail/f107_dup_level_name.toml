@@ -1,0 +1,12 @@
+##################################################################################################
+## Same level name used twice
+##
+[system]
+  [system.levels]
+  debug = { id = 'D', name = "DEBUG" }
+  error = { id = 'E', name = "ERROR" }
+  function = { id = 'F', name = "FUNC" }
+  info = { id = 'I', name = "INFO" }
+  module = { id = 'M', name = "FUNC" }
+  object = { id = 'O', name = "OBJ" }
+  warning = { id = 'W', name = "WARNING" }

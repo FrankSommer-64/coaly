@@ -1,0 +1,2 @@
+# Inline table: leading separator before key-value-pair
+inline_table = { ,y=true}

@@ -1,0 +1,7 @@
+##################################################################################################
+## Custom settings for all system properties
+##
+[system]
+  [system.mode]
+  enabled = [""]
+  buffered = [ "" ]

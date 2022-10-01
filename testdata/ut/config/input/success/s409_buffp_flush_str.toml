@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with single flush conditions specified as string value.
+##
+[policies.buffer.my_default]
+  content_size = "32m"
+  index_size = "1m"
+  flush = "full"

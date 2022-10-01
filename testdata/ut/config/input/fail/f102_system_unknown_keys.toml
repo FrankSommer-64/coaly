@@ -1,0 +1,14 @@
+##################################################################################################
+## Unknown keys under system
+##
+[system]
+release = 0.1
+
+[system.info]
+os = "unknown"
+
+[system.levels]
+detail = { id='I', name="DETAIL" }
+
+[system.mode]
+disabled = [ "all" ]

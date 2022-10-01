@@ -1,0 +1,2 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:{S:[0]/K:mmfile/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:20971520/RP:-}
+Line 7: Value for parameter "resources.size" must be an integer between 4096 and 9223372036854775807. Using default value 20971520.

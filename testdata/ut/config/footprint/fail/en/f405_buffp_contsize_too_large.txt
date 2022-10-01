@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:8388608/IS:10000/C:1/L:4096}
+Line 6: Value for parameter "policies.buffer.my_default.content_size" must be an integer between 4096 and 4294967295. Using default value 8388608.

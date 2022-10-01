@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, unknown parameter specified
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+protected = true

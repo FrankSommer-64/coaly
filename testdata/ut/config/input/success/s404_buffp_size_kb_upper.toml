@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification in KBytes using upper case K.
+##
+[policies.buffer.my_default]
+  content_size = "256K"
+  index_size = "8K"
+  flush = [ "exit" ]

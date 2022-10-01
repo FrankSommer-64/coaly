@@ -1,0 +1,6 @@
+##################################################################################################
+## Rollover policy without condition.
+##
+[policies.rollover.my_default]
+keep = 9
+compression = ""

@@ -1,0 +1,11 @@
+# Separator|TestCaseName|Input|OK/ERR|ExpectKey(true/false)|TokenId|ValueType|StringValue|SpecificValue|ExceptionId
+|MlLiteralStringRegex|'''I [dw]on't need \\d{2} apples'''|OK|false|Value|String|I [dw]on't need \\d{2} apples||
+|MlLiteralStringQuotes|'''Here are fifteen quotation marks: """""""""""""""'''|OK|false|Value|String|Here are fifteen quotation marks: """""""""""""""||
+|MlLiteralStringTab|'''Field1\tField2\tField3'''|OK|false|Value|String|Field1\tField2\tField3||
+|MlLiteralStringEmpty|''''''|OK|false|Value|String|||
+|MlLiteralStringOneDelimMlLiteralString|'''''''|OK|false|Value|String|'||
+|MlLiteralStringTwoDelimMlLiteralString|''''''''|OK|false|Value|String|''||
+|MlLiteralStringTrimmedLineFeed|'''\nHello'''|OK|false|Value|String|Hello||
+|MlLiteralStringTrimmedCrLineFeed|'''\r\nHello'''|OK|false|Value|String|Hello||
+|MlLiteralStringTooManyQuotes|'''''''''|ERR|false|||||TooManyQuotes
+|MlLiteralStringNullAfterOpeningDelimiter|'''|ERR|false|||||UnterminatedString

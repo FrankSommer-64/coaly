@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor for object, neither name nor value specified
+##
+[[modes]]
+trigger = "object"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

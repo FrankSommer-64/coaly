@@ -1,0 +1,6 @@
+##################################################################################################
+## Record level ID character not specified as string
+##
+[system]
+  [system.levels]
+  debug = { id=23.999 }

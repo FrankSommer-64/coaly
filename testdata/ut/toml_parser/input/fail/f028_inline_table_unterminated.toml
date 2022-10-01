@@ -1,0 +1,2 @@
+# Inline table: missing right brace
+inline_table = {x=2

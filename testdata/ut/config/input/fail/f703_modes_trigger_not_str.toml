@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor using non-string trigger
+##
+[[modes]]
+trigger = [ "all" ]
+name = "my_mode"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

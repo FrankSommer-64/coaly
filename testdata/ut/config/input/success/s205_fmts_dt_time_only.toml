@@ -1,0 +1,6 @@
+##################################################################################################
+## Date-time format with custom time only.
+##
+[formats]
+  [formats.datetime]
+  my_default = { time = "%H%M%S.%6f%%(%%%I%M%S%P%p)" }

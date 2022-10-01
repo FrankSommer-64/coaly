@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with content size specification not string.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = true
+index_size = 10000

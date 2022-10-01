@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor for object, name not string, value not specified
+##
+[[modes]]
+trigger = "object"
+name = { obj = true }
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

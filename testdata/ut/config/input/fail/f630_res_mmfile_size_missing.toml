@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, file size not specified for memory mapped file
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+name = "coaly.log"

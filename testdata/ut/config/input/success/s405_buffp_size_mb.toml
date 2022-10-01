@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification in MBytes.
+##
+[policies.buffer.my_default]
+  content_size = "32M"
+  index_size = "1M"
+  flush = [ "exit" ]

@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to emergency
+##
+[system]
+  [system.mode]
+  enabled = ["emergency"]
+  buffered = [ "emergency" ]

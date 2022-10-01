@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification using invalid unit character.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = "2T"
+index_size = "100M"

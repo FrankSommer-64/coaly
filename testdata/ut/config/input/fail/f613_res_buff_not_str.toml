@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, buffer policy not specified as string
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+buffer = true

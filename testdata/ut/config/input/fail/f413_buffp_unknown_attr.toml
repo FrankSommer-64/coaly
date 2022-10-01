@@ -1,0 +1,8 @@
+##################################################################################################
+## Buffer policy with an unknown attribute.
+##
+[policies.buffer.my_default]
+flush = [ "error", "exit" ]
+protected = false
+content_size = "32M"
+index_size = "1M"

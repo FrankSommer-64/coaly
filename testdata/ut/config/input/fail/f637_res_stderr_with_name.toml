@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, name for stderr specified
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+name = "console"

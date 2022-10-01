@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:8388608/IS:10000/C:1/L:4096}
+Line 6: Invalid size specification "true" for parameter "policies.buffer.my_default.content_size". Using default value 8388608.

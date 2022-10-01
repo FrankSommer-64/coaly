@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to object
+##
+[system]
+  [system.mode]
+  enabled = ["object"]
+  buffered = [ "object" ]

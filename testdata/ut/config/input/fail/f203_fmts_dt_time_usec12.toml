@@ -1,0 +1,6 @@
+##################################################################################################
+## Time format with microsecond length specifier 12.
+##
+[formats]
+  [formats.datetime]
+  my_default = { time = "%H:%M:%S,%12f" }

@@ -1,0 +1,286 @@
+##################################################################################################
+## Coaly configuration file
+##
+## The file uses TOML format.
+## Tables and key/value pairs are all documented inline below.
+##
+##################################################################################################
+
+##################################################################################################
+## Basic system properties.
+##
+[system]
+  # Format version of this file.
+  version = "0.1"
+
+  # Application name, intended as an identifier when a dedicated server for logging and tracing
+  # is used.
+  # Can be referenced in log and trace records or resource names as $ApplicationName.
+  app_name = "myappname"
+
+  # Maximum number of active output behaviour changes.
+  # Every behaviour change triggered by the creation of a Coaly specific struct remains active
+  # until the struct is dropped. Especially recursive function calls may cause a problem.
+  # If this limit is exceeded, further behaviour changes are ignored.
+  change_stack_size = 32768
+
+  # ID characters and names for all record levels.
+  # The key/value pairs below define the default settings.
+  # Different record levels must not use the same ID character or name.
+  # Can be referenced in log and trace records or resource names as $LevelId resp. $Level.
+  [system.levels]
+  debug = { id = 'D', name = "DEBUG" }
+  error = { id = 'E', name = "ERROR" }
+  function = { id = 'F', name = "FUNC" }
+  info = { id = 'I', name = "INFO" }
+  module = { id = 'M', name = "MOD" }
+  object = { id = 'O', name = "OBJ" }
+  warning = { id = 'W', name = "WARNING" }
+
+  # Output mode configuration upon application start, may be changed during runtime.
+  # Only log or trace records with enabled levels are written to output.
+  # Record levels contained in the buffered list are buffered in memory.
+  # Choose from:
+  # * "" or empty list - all record levels disabled, no output will be written at all
+  # * "debug" - detailed diagnostic informations
+  # * "error" - operation failure informations
+  # * "function" - function entry and exit
+  # * "info" - general useful information, e.g. application progress
+  # * "module" - module entry and exit
+  # * "object" - information concerning specific application objects
+  # * "warning" - information about a recovered failure
+  # * "logs" - groups levels error, warning and info
+  # * "traces" - groups levels debug, function, module and object
+  # * "units" - groups levels function and module
+  # * "all" - all record levels
+  [system.mode]
+  enabled = [ "logs" ]
+  buffered = [ ]
+
+##################################################################################################
+## Format specifications.
+## Date-Time-Formats describe how date, time and date-time values are formatted. Date or time
+## related values may be used within log or trace records and within resource names.
+##
+## Output formats describe which items are contained in log or trace records and how the items are
+## ordered. Different formats can be specified depending on record level and/or trigger.
+## Possible triggers are:
+## * "all" - any
+## * "creation" - the application created a trace struct
+##                (record levels "function", "module" and "object" only)
+## * "drop" - the application dropped a trace struct
+##            (record levels "function", "module" and "object" only)
+## * "message" - the application issued a log or trace message
+##
+## The following placeholder variables can be used for item specification:
+## * $ApplicationName - name of the application as defined by key system.app_name
+## * $Date - the current date
+## * $Env[...] - environment variable, name specified within square brackets
+## * $HostName - the host name
+## * $Ip4Address - the host's IPv4 address
+## * $Ip6Address - the host's IPv6 address
+## * $Level - the record level of the log or trace message
+## * $LevelId - the record level ID character of the log or trace message
+## * $Message - the log or trace message issued by the application
+## * $ObserverName - the name of the trace struct that triggered the event
+##                   (record levels "function", "module" and "object" only)
+## * $ObserverValue - the user defined value of the trace struct that triggered the event
+##                    (record level "object" only)
+## * $ProcessId - the process ID of the application
+## * $ProcessName - the process name of the application
+## * $PureSourceFileName - the name of the source file that issued the log or trace, without path
+## * $SourceFileName - the name of the source file that issued the log or trace, including
+##                     all parent directories starting under src
+## * $SourceLineNr - the line number in the source file, where a log or trace message was issued
+## * $ThreadId - the ID of the thread that issued the log or trace message
+## * $ThreadName - the name of the thread that issued the log or trace message. Defaults to
+##                 thread ID, if the name has not been set by the application
+## * $Time - the current time
+## * $TimeStamp - the current date and time
+##
+[formats]
+  # Default format if a date or time related placeholder variable is used in a log or trace record.
+  # For custom specifications, select a name (e.g. myformat) and supply a table with the
+  # desired formats ([formats.datetime.myformat] in that case).
+  # Parameter timestamp corresponds to placeholder variaböe $TimeStamp, date to $Date and
+  # time to $Time.
+  # All declarations are optional, missing parameters are complemented wit default values. 
+  [formats.datetime]
+  output_default = {timestamp = "%d.%m.%y %H:%M:%S.%3f", date = "%d.%m.%y", time = "%H:%M:%S.%3f"}
+
+  # Default output format, specified with an array of tables.
+  # Use different table entries for different record level/trigger combinations.
+  # Make sure all combinations are specified exactly once. Missing combinations are complemented
+  # with system defaults, if a combination matches more than one table entry, the first match
+  # is significant.  
+  # Combination all record levels for trigger log or trace message
+  [[formats.output.default]]
+  levels = [ "all" ]
+  triggers = [ "message" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$Message"
+
+  # Combination custom trace object for trigger creation
+  [[formats.output.default]]
+  levels = [ "object" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName created"
+
+  # Combination custom trace object for trigger drop
+  [[formats.output.default]]
+  levels = [ "object" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName dropped"
+
+  # Combination function/module for trigger creation (i.e. function or module is entered)
+  [[formats.output.default]]
+  levels = [ "function", "module" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName -in-"
+
+  # Combination function/module for trigger drop (i.e. function or module is left)
+  [[formats.output.default]]
+  levels = [ "function", "module" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName -out-"
+
+##################################################################################################
+## Policies defining the system behaviour during runtime.
+##
+[policies]
+  # Rollover policies, apply to file based resources only.
+  # Rollover means, that the current file is closed and a new one opened, if a configurable
+  # condition occurs. Older files are renamed, optionally compressed and eventually deleted.
+  # condition: one of
+  # * "" - no rollover, only one file
+  # * "size > n[K|M|G]" - rollover, if file size reaches this limit (default, 20 MByte)
+  # * "every [n] [second(s)|minute(s)|hour(s)|day(s)]" - rollover, if given period after
+  #   application start elapsed
+  # * "every [n] [hour(s)|day(s)|week(s)|month(s)] at <timestamp>" - periodic rollover, if given
+  #   timestamp reached
+  # keep: number of old files to keep (default: 9)
+  # compression: one of
+  # * "" - no compression (default)
+  # * "bz2" - bzip2 compression
+  # * "gzip" - gzip compression
+  # * "lzma" - lzma compression
+  # * "zip" - ZIP compression
+  [policies.rollover.default]
+  condition = "size > 20m"
+  keep = 9
+  compression = ""
+
+  # Buffer policies, apply to all resources except for memory mapped files.
+  # Parameter flush is mandatory
+  # flush: flush condition(s), list with at least one of
+  # * error - upon log or trace record with level error
+  # * warning - upon log or trace record with level warning
+  # * rollover - upon rollover of associated file
+  # * full - upon buffer full
+  # * exit - upon application exit (default)
+  # content_size: buffer content size in bytes, optionally with unit suffix K, M or G.
+  # index_size: record index size in number of entries, optionally with unit suffix K, M or G.
+  # max_record_length: Maximum length for a log or trace record, longer records are truncated
+  [policies.buffer.default]
+  flush = [ "error", "rollover", "exit" ]
+  content_size = "32M"
+  index_size = "1M"
+  max_record_length = 4096
+
+##################################################################################################
+## Resources receiving log and trace output.
+## The parameters for resource kind and record levels are always mandatory.
+## Supported resource kinds are:
+## * "file" - regular file
+## * "mmfile" - memory mapped file
+## * "stdout" - standard output device, usually terminal output
+## * "stderr" - standard error device, usually terminal output
+## * "network" - network connection to dedicated remote server providing a trace and log service
+## The following variables can be used for resource names:
+## * $ApplicationName - name of the application as defined by key system.application_name above
+## * $Date - the current date
+## * $HostName - the host name
+## * $ProcessId - the process ID of the application
+## * $ProcessName - the process name of the application
+## * $ThreadId - the ID of the thread that issued the log or trace message.
+##               All threads will write into their own resource in that case, it also implies that
+##               a separate buffer will be allocated for every thread when switiching
+##               to buffered mode.
+## * $ThreadName - the name of the thread that issued the log or trace message.
+##                 Defaults to thread ID, if the name has not been set.
+##                 All threads will write into their own resource in that case, it also implies
+##                 that a separate buffer will be allocated for every thread when switiching
+##                 to buffered mode.
+## * $Time - the current time
+## * $TimeStamp - the current date and time
+##
+# Output resource of kind file.
+# Parameter name is mandatory.
+[[resources]]
+# Resource kind
+kind = "file"
+# Record levels handled by the resource
+levels = [ "all" ]
+# Output format to use for log and trace records, the reference must match the last part of a
+# [[formats.output.xxx]] block from section formats
+output_format = "default"
+# File name
+name = "$ProcessName_$Date.log"
+# Policy, when to close current output file and rollover to a new one
+rollover = "default"
+# Size and behaviour of memory buffer, when operation mode is changed to buffered
+buffer = "default"
+
+# Example resource of kind memory mapped file.
+# Parameters name and size are mandatory.
+[[resources]]
+kind = "mmfile"
+levels = [ "logs" ]
+output_format = "default"
+name = "$ProcessName_$Date.log"
+size = "32M"
+
+# Example resource of kind stdout.
+[[resources]]
+kind = "stdout"
+levels = [ "error" ]
+output_format = "default"
+buffer = "default"
+
+##################################################################################################
+## Output mode changes during runtime.
+## A mode change may occur when a function or module is entered or an application struct is
+## created. A switch to the previous active mode occurs, when the function or module is left or
+## the application object is dropped.
+##
+[[modes]]
+# Ignore all record levels except for errors and use buffering, when code in module stable
+# is executed. This mode shall affect only the thread, that entered the module.
+trigger = "module"
+name = "stable"
+enabled = [ "error" ]
+buffered = [ "all" ]
+scope = "thread"
+
+# Enable and buffer all record levels in an error prone time critical function.
+# This mode shall affect only the thread, that entered the function.
+[[modes]]
+trigger = "function"
+name = "time_critical"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"
+
+# Enable all record levels and buffer record levels debug and trace, whenever a struct with the
+# given value pattern is created.
+# This mode shall affect the whole process.
+[[modes]]
+trigger = "object"
+value = "CLY.*"
+enabled = [ "all" ]
+buffered = [ "traces" ]
+scope = "process"

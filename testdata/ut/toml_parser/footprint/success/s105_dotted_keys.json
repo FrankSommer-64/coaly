@@ -1,0 +1,18 @@
+{
+  "3" : {
+    "14159" : "pi"
+  },
+  "fruit" : {
+    "color" : "yellow",
+    "flavor" : "banana",
+    "name" : "banana"
+  },
+  "name" : "Orange",
+  "physical" : {
+    "color" : "orange",
+    "shape" : "round"
+  },
+  "site" : {
+    "google.com" : true
+  }
+}

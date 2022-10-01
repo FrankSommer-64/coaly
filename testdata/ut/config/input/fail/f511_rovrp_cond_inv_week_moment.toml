@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy week interval with invalid weekday in moment.
+##
+[policies.rollover.my_default]
+condition = "every week at doomsday"
+keep = 9
+compression = ""

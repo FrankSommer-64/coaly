@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, size for stderr specified
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+size = 2_000_000

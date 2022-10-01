@@ -1,0 +1,6 @@
+##################################################################################################
+## Timestamp format with invalid specifiers.
+##
+[formats]
+  [formats.datetime]
+  my_default = { timestamp = "%Y-%m-%d%H:%M:%S %V" }

@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with plain size specifications.
+##
+[policies.buffer.my_default]
+  content_size = "100000"
+  index_size = "5000"
+  flush = [ "exit" ]

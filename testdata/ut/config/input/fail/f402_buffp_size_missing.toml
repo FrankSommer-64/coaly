@@ -1,0 +1,5 @@
+##################################################################################################
+## Buffer policy without size specification.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]

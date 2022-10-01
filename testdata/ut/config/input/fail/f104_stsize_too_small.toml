@@ -1,0 +1,5 @@
+##################################################################################################
+## Stack size value smaller than allowed minimum
+##
+[system]
+  change_stack_size = 2

@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor, invalid buffered level
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+buffered = [ "error", "detail" ]
+scope = "thread"

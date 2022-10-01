@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, size for stdout specified
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+size = 2_000_000

@@ -1,0 +1,63 @@
+## Configuration file with:
+## - single output resource of kind file
+## - output format using all placeholder variables
+## - default mode errors, mode all in function/module/object
+[system]
+  app_id = 1234
+  app_name = "testapp"
+  change_stack_size = 32768
+  output_path = "$Env[COALY_OUTPUT_PATH]"
+  fallback_path = "/tmp"
+[system.mode]
+  enabled = [ "problems" ]
+  buffered = [ ]
+
+[formats]
+[[formats.output.mytest]]
+levels = [ "all" ]
+triggers = [ "message" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$PureSourceFileName:$SourceLineNr M:$Message"
+
+[[formats.output.mytest]]
+levels = [ "object" ]
+triggers = [ "creation" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName:$SourceLineNr M:$ObserverName with val >$ObserverValue< created"
+
+[[formats.output.mytest]]
+levels = [ "object" ]
+triggers = [ "drop" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName M:$ObserverName with val >$ObserverValue< dropped"
+
+[[formats.output.mytest]]
+levels = [ "function", "module" ]
+triggers = [ "creation" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName:$SourceLineNr M:$ObserverName entered"
+
+[[formats.output.mytest]]
+levels = [ "function", "module" ]
+triggers = [ "drop" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName M:$ObserverName left"
+
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+output_format = "mytest"
+name = "$AppName_$Date.log"
+
+[[modes]]
+# Ignore all record levels except for errors and use buffering, when code in module stable
+# is executed.
+trigger = "module"
+name = "testmod"
+enabled = [ "all" ]
+
+# Enable and buffer all record levels in an error prone time critical function.
+[[modes]]
+trigger = "function"
+name = "mode_change_function"
+enabled = [ "all" ]
+
+[[modes]]
+trigger = "object"
+value = "123"
+enabled = [ "all" ]

@@ -1,0 +1,10 @@
+##################################################################################################
+## Mode change descriptor for module, superfluous attribute value specified
+##
+[[modes]]
+trigger = "module"
+name = "my_mod"
+value = "ABC"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

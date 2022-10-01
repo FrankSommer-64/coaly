@@ -1,0 +1,4 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:
+Line 5: Invalid flush condition "yes" for buffer policy "policies.buffer.my_default" ignored.
+Line 5: Invalid flush condition "sometimes" for buffer policy "policies.buffer.my_default" ignored.
+Line 4: No valid flush condition for buffer policy "my_default" specified. Policy ignored.

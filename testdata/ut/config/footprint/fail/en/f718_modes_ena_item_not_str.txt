@@ -1,0 +1,2 @@
+{GO:[]/LO:[]/LU:[{SC:thread/K:function/N:my_func/V:-/ENA:0/BUF:11111111111111111111111111111111}]}
+Line 7: Parameter "modes.enabled" requires a string value.

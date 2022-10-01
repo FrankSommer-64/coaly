@@ -1,0 +1,2 @@
+# Array: missing separator between inner array and inline table
+array = [ [0, 2] {x=1,y=2} ]

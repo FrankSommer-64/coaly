@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with all flush conditions enabled.
+##
+[policies.buffer.my_default]
+  content_size = "32m"
+  index_size = "1m"
+  flush = [ "error", "rollover", "exit", "warning", "full" ]

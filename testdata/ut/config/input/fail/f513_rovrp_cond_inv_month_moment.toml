@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy month interval with invalid day in moment.
+##
+[policies.rollover.my_default]
+condition = "every month at 00 00:00"
+keep = 9
+compression = ""

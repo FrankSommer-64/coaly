@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial output modes with duplicate levels.
+##
+[system]
+  [system.mode]
+  enabled = ["error", "warning", "error"]
+  buffered = [ "logs", "traces", "traces" ]

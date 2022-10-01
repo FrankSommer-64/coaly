@@ -1,0 +1,1 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:{S:[123]/K:network/L:11111111111/BP:my_buff_policy/OF:-/SD:R:udp://192.168.200.122:7000/L:udp://192.168.200.18:0}

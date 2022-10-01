@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, rollover policy specified for stderr
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+rollover = "my_rovr_policy"

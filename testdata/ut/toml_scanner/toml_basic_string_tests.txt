@@ -1,0 +1,18 @@
+# Separator|TestCaseName|Input|OK/ERR|ExpectKey(true/false)|TokenId|ValueType|StringValue|SpecificValue|ExceptionId
+|BasicStringExample|"I'm a string.\t\\"You can quote me\\". Name\\tJos\\u00E9\\nLocation\\tSF."|OK|false|Value|String|I'm a string.\t"You can quote me". Name\tJos\u{00E9}\nLocation\tSF.||
+|BasicStringEmpty|""|OK|false|Value|String|||
+|BasicStringValidEscapeSequences|"\\b\\t\\n\\f\\r\\\\\\"\\u0020\\U00101234"|OK|false|Value|String|\b\t\n\f\r\\\"\u{20}\u{101234}||
+|BasicStringEscapedDelimiterAtEnd|"\\""|OK|false|Value|String|"||
+|BasicStringInvalidValidEscapeChar|"\\q"|ERR|false|||||InvalidEscapeChar
+|BasicStringInvalidUnicodeEscValue16|"\\uD888"|ERR|false|||||InvalidUnicodeEscapeSeq
+|BasicStringInvalidUnicodeEscValue32|"\\U11223344"|ERR|false|||||InvalidUnicodeEscapeSeq
+|BasicStringUnicodeEscSeqTooShort16|"\\u123"|ERR|false|||||InvalidUnicodeEscapeChar
+|BasicStringUnicodeEscSeqTooShort32|"\\U1234567"|ERR|false|||||InvalidUnicodeEscapeChar
+|BasicStringInvalidUnicodeEscSeqChar16|"\\u12x3"|ERR|false|||||InvalidUnicodeEscapeChar
+|BasicStringInvalidUnicodeEscSeqChar32|"\\U000012x3"|ERR|false|||||InvalidUnicodeEscapeChar
+|BasicStringNullAfterOpeningDelimiter|"|ERR|false|||||UnterminatedString
+|BasicStringLineFeedAfterOpeningDelimiter|"\n|ERR|false|||||UnterminatedString
+|BasicStringCarriageReturnAfterOpeningDelimiter|"\r|ERR|false|||||UnterminatedString
+|BasicStringNullAfterEscape|"\\|ERR|false|||||UnterminatedString
+|BasicStringLineFeedAfterEscape|"\\\n|ERR|false|||||LineTermInSingleLineString
+|BasicStringCarriageReturnAfterEscape|"\\\r|ERR|false|||||LineTermInSingleLineString

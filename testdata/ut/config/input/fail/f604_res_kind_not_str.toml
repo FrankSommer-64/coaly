@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, kind not specified as string
+##
+[[resources]]
+kind = 999
+levels = [ "error" ]

@@ -1,0 +1,2 @@
+{GO:[]/LO:[]/LU:[{SC:thread/K:function/N:my_func/V:-/ENA:11111111111111111111111111111111/BUF:1000}]}
+Line 4: Scope for a mode with trigger function or module is always "thread", parameter "scope" ignored.

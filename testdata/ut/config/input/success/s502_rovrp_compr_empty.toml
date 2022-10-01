@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with compression set to empty string.
+##
+[policies.rollover.my_default]
+condition = "size > 20m"
+keep = 9
+compression = ""

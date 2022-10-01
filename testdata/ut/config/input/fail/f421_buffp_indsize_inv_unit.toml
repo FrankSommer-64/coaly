@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with record index size specification using invalid unit character.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = "32M"
+index_size = "5X"

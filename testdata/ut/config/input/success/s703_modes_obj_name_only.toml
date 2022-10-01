@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor for an object identified by name only.
+##
+[[modes]]
+trigger = "object"
+name = "my_obj"
+buffered = [ "traces" ]
+scope = "thread"

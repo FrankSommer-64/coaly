@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor for standard error with mandatory attributes only
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]

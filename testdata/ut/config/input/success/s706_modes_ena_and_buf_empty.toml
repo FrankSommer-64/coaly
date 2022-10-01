@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor with both enabled and buffered levels empty
+##
+[[modes]]
+trigger = "module"
+name = "my_mod"
+enabled = [ ]
+buffered = [ ]

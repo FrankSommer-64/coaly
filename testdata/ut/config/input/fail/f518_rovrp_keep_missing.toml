@@ -1,0 +1,6 @@
+##################################################################################################
+## Rollover policy keep count not specified.
+##
+[policies.rollover.my_default]
+condition = "size > 20m"
+compression = ""

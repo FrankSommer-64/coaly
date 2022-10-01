@@ -1,0 +1,2 @@
+# Array: two separators between values
+array = [1, , 2]

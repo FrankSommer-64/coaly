@@ -1,0 +1,1 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:100000/IS:25000/C:10000/L:256}

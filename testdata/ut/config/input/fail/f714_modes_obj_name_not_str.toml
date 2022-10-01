@@ -1,0 +1,10 @@
+##################################################################################################
+## Mode change descriptor for object, name not string, value ok
+##
+[[modes]]
+trigger = "object"
+name = { obj = true }
+value = "OK_*"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

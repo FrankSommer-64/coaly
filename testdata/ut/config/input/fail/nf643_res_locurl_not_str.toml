@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, local URL not specified as string
+[[resources]]
+kind = "network"
+levels = [ "all" ]
+local_url = []
+remote_url = "udp://192.168.200.122:7000"

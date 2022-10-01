@@ -1,0 +1,1 @@
+{GO:[{SC:process/K:object/N:my_obj/V:CLY*01*/ENA:11110000000/BUF:11110000000}]/LO:[]/LU:[]}

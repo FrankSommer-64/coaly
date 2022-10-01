@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy week interval with invalid time in moment.
+##
+[policies.rollover.my_default]
+condition = "every 2 weeks at sunday 22:99"
+keep = 9
+compression = ""

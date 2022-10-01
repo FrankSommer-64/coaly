@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with record index size specification not string.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = "10M"
+index_size = false

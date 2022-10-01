@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with compression type lzma.
+##
+[policies.rollover.my_default]
+condition = "size > 20m"
+keep = 9
+compression = "lzma"

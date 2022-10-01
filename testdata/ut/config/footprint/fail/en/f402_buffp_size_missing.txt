@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:
+Line 4: No valid buffer content size for buffer policy "my_default" specified. Policy ignored.

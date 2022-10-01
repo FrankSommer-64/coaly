@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------------
+# Build file for Coaly logging library.
+#
+# Copyright (c) 2022, Frank Sommer.
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# * Redistributions of source code must retain the above copyright notice, this
+#   list of conditions and the following disclaimer.
+#
+# * Redistributions in binary form must reproduce the above copyright notice,
+#   this list of conditions and the following disclaimer in the documentation
+#   and/or other materials provided with the distribution.
+#
+# * Neither the name of the copyright holder nor the names of its
+#   contributors may be used to endorse or promote products derived from
+#   this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# -----------------------------------------------------------------------------
+
+[package]
+name = "coaly"
+version = "0.1.0"
+authors = ["Frank Sommer <frank@sherpa-software.de>"]
+edition = "2021"
+autobenches = true
+autobins = false
+categories = ["tools", "no-std"]
+description = "Context aware logging and tracing library.\n"
+#documentation = "https://docs.rs/coaly"
+include = ["src/", "LICENSE-*", "README.md", "CHANGELOG.md", "COPYRIGHT"]
+keywords = ["logging", "tracing"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/coaly"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "doc_cfg"]
+
+[lib]
+name = "coaly"
+path = "src/lib.rs"
+
+[[test]]
+name = "systemtest"
+path = "systemtest/testapp.rs"
+harness = false
+
+[features]
+all = ["core", "compression", "net"]
+default = ["core"]
+core = []
+compression = ["bzip2", "flate2", "xz2", "zip"]
+net = ["tokio"]
+
+[dependencies]
+chrono = {version="0.4.22", features=["serde"] }
+lazy_static = "1.4.0"
+libc = "0.2.51"
+memmap2 = "0.5.7"
+num-traits = "0.2.15"
+regex = "1.6.0"
+bzip2 = {version="0.4.3", optional=true}
+flate2 = {version="1.0.24", optional=true}
+xz2 =  {version="0.1.7", optional=true}
+zip =  {version="0.6.2", optional=true}
+tokio = {version="1.20", features = [ "rt", "rt-multi-thread", "net", "macros", "signal", "sync", "io-util", "time"], optional=true}
+
+[dev-dependencies]
+rand = "0.8.5"
+toml = "0.5.9"
+serde = {version="1.0.144", features=["derive"]}
+
+[target.'cfg(windows)'.dependencies]
+winapi =  {version="0.3.9", features=[ "processthreadsapi" ]}
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+debug = false

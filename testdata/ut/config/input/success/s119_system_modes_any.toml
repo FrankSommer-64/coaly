@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes with all possible values
+##
+[system]
+  [system.mode]
+  enabled = ["emergency", "alert", "critical", "error", "warning", "notice", "info", "debug", "function", "module", "object", "logs", "problems", "traces", "all"]
+  buffered = ["emergency", "alert", "critical", "error", "warning", "notice", "info", "debug", "function", "module", "object", "logs", "problems", "traces", "all"]

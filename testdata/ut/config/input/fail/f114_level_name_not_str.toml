@@ -1,0 +1,6 @@
+##################################################################################################
+## Record level name not specified as string
+##
+[system]
+  [system.levels]
+  debug = { name=23.999 }

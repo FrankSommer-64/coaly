@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor, scope process for trigger module
+##
+[[modes]]
+trigger = "module"
+name = "my_mod"
+buffered = [ "error" ]
+scope = "process"

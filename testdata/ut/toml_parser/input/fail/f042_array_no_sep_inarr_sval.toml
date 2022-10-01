@@ -1,0 +1,2 @@
+# Array: missing separator between inner array and simple value
+array = [ [0, 0, 0, 0] true ]

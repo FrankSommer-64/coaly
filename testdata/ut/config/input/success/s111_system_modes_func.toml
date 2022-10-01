@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to function
+##
+[system]
+  [system.mode]
+  enabled = ["function"]
+  buffered = [ "function" ]

@@ -1,0 +1,9 @@
+##################################################################################################
+## Resource descriptor, local URL for memory mapped file specified
+##
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+name = "coaly.log"
+size = "64m"
+local_url = "tcp://127.0.0.1:2345"

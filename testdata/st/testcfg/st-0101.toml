@@ -1,0 +1,22 @@
+brief_desc = "Test multi-threaded app with log file, no mode changes"
+full_desc = ""
+coaly_config_file = "r-1file_f-allvars_m-none.toml"
+#coaly_config_file_is_wrong = true
+main_group = "main"
+footprint_pattern = "^.* (H:\\w+)( A:\\w+\\(\\d+\\)) P:.*( L:[A-Z]\\([A-Z]+\\))( S:.*\\.rs)(:\\d+){0,1}( M:.*)$"
+
+[[thread_groups]]
+name = "main"
+structure = "sequential"
+loops = 1
+runtime = 0
+event_delay = "const(1000)"
+
+[[thread_groups]]
+name = "worker"
+count = 3
+structure = "sequential"
+loops = 1
+runtime = 0
+start_delay = "mul(${tnr},15000)"
+event_delay = "const(1000)"

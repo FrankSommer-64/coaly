@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to alert
+##
+[system]
+  [system.mode]
+  enabled = ["alert"]
+  buffered = [ "alert" ]

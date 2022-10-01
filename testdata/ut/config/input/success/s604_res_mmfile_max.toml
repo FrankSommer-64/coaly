@@ -1,0 +1,10 @@
+##################################################################################################
+## Resource descriptor for a memory mapped file with all possible attributes
+##
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+size = "50M"
+name = "$ProcessName_$Date.log"
+output_format = "my_out_fmt"
+rollover = "my_rovr_policy"

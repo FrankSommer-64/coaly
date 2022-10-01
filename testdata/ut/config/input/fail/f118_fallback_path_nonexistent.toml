@@ -1,0 +1,5 @@
+##################################################################################################
+## Fallback root directory does not exist
+##
+[system]
+  fallback_path = "/nonexistent"

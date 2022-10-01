@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, remote URL for stdout specified
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+remote_url = "tcp://127.0.0.1:2345"

@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:1000000/IS:50000/C:1/L:1000000}
+Line 4: Maximum record length for buffer policy "my_default" exceeds buffer size. Using buffer size 1000000.

@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to traces
+##
+[system]
+  [system.mode]
+  enabled = ["traces"]
+  buffered = [ "traces" ]

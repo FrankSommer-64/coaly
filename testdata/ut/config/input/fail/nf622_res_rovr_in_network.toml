@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, rollover policy specified for network interface
+##
+[[resources]]
+kind = "network"
+levels = [ "all" ]
+rollover = "my_rovr_policy"
+remote_url = "udp://192.168.200.122:7000"

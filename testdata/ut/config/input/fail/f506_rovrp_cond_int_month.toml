@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy month interval without moment.
+##
+[policies.rollover.my_default]
+condition = "every month"
+keep = 9
+compression = ""

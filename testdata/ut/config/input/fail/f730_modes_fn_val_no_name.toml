@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor for function, superfluous attribute value specified, but name missing
+##
+[[modes]]
+trigger = "function"
+value = "112"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

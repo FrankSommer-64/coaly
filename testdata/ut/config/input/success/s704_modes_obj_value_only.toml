@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor for an object identified by value only.
+##
+[[modes]]
+trigger = "object"
+value = "CLY*01*"
+enabled = [ "traces" ]
+buffered = [ "traces" ]

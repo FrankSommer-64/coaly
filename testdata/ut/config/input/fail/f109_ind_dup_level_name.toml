@@ -1,0 +1,6 @@
+##################################################################################################
+## Same level name used as another, not specified level
+##
+[system]
+  [system.levels]
+  module = { name="FUNC" }

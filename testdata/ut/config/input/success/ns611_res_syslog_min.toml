@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor for syslog with mandatory attributes only
+##
+[[resources]]
+kind = "syslog"
+levels = [ "problems" ]

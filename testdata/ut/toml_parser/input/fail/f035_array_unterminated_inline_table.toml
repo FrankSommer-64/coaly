@@ -1,0 +1,2 @@
+# Unterminated inline table within array
+unterminated_array = [ { x = true

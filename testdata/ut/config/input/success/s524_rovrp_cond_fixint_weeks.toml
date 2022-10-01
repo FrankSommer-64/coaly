@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with interval condition 2 weeks at specific moment
+##
+[policies.rollover.my_default]
+condition = "every 2 weeks at wednesday 23:30"
+keep = 9
+compression = ""

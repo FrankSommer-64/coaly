@@ -1,0 +1,8 @@
+##################################################################################################
+## Buffer policy with maximum record length specification.
+##
+[policies.buffer.my_default]
+  content_size = "100000"
+  index_size = "25000"
+  flush = [ "exit" ]
+  max_record_length = 256

@@ -1,0 +1,7 @@
+##################################################################################################
+## Output format without triggers.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "message" ]
+  levels = [ "all" ]

@@ -1,0 +1,13 @@
+brief_desc = "Test single-threaded app with log file, no mode changes"
+full_desc = ""
+coaly_config_file = "r-1file_f-allvars_m-none.toml"
+#coaly_config_file_is_wrong = true
+footprint_pattern = "^.* (H:\\w+)( A:\\w+\\(\\d+\\)) P:.*( L:[A-Z]\\([A-Z]+\\))( S:.*\\.rs)(:\\d+){0,1}( M:.*)$"
+main_group = "main"
+
+[[thread_groups]]
+name = "main"
+structure = "sequential"
+loops = 1
+runtime = 0
+event_delay = "const(1000)"

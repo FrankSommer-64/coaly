@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with interval condition 3 months at specific moment
+##
+[policies.rollover.my_default]
+condition = "every 3 months at 01 04:00"
+keep = 9
+compression = ""

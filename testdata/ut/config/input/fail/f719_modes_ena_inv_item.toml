@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor, invalid anabled level
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+enabled = [ "error", "detail" ]
+scope = "thread"

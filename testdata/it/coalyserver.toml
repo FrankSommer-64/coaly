@@ -1,0 +1,136 @@
+##################################################################################################
+## Coaly server configuration file for tests.
+##################################################################################################
+
+[system]
+  version = "0.1"
+  app_id = 1000
+  app_name = "coalytestserver"
+  output_path = "/var/testing/coaly/coalytest/$AppName"
+
+  [system.levels]
+  debug = { id = 'D', name = "DEBUG" }
+  error = { id = 'E', name = "ERROR" }
+  function = { id = 'F', name = "FUNC" }
+  info = { id = 'I', name = "INFO" }
+  module = { id = 'M', name = "MOD" }
+  object = { id = 'O', name = "OBJ" }
+  warning = { id = 'W', name = "WARNING" }
+
+[server]
+  data_addr = "udp://127.0.0.1:3690"
+  admin_addr = "udp://127.0.0.1:3691"
+  max_connections = 10
+  keep_connection = 86400
+  max_msg_size = "64K"
+  admin_key = "123"
+  data_clients = [
+    { source = "127.0.0.1", app_ids = [ 9876 ] }
+  ]
+  admin_clients = [ "127.0.0.1" ]
+
+[formats]
+  [formats.datetime]
+  # Format for log records
+  output_log = {timestamp = "%d.%m.%y %H:%M:%S", date = "%d.%m.%y", time = "%H:%M:%S.%3f"}
+  # Format for trace records with fine timestamp resolution
+  output_trace1 = {timestamp = "%d %H:%M:%S.%6f", date = "%d.%m.%y", time = "%H:%M:%S.%6f"}
+  # Format for log records with rough timestamp resolution
+  output_trace2 = {timestamp = "%d.%m.%y %H:%M:%S", date = "%d.%m.%y", time = "%H:%M:%S"}
+
+  # Output format for a production client application sending mostly log records.
+  [[formats.output.prodapp]]
+  levels = [ "logs" ]
+  triggers = [ "message" ]
+  datetime_format = "output_log"
+  items = "$TimeStamp|$LevelId|$ProcessName on $HostName says: $Message"
+  [[formats.output.prodapp]]
+  levels = [ "traces" ]
+  triggers = [ "message" ]
+  datetime_format = "output_trace2"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$Message"
+  [[formats.output.prodapp]]
+  levels = [ "object" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_trace2"
+  items = "$TimeStamp|$LevelId|$ObserverName created"
+  [[formats.output.prodapp]]
+  levels = [ "object" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_trace2"
+  items = "$TimeStamp|$LevelId|$ObserverName dropped"
+  [[formats.output.prodapp]]
+  levels = [ "function", "module" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_trace2"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName -in-"
+  [[formats.output.prodapp]]
+  levels = [ "function", "module" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_trace2"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName -out-"
+
+  # Output format for a client application in development sending mostly trace records.
+  [[formats.output.devapp]]
+  levels = [ "all" ]
+  triggers = [ "message" ]
+  datetime_format = "output_trace1"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ProcessName on $HostName says: $Message"
+  [[formats.output.devapp]]
+  levels = [ "object" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_trace1"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName created"
+  [[formats.output.devapp]]
+  levels = [ "object" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_trace1"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName dropped"
+  [[formats.output.devapp]]
+  levels = [ "function", "module" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_trace1"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName -in-"
+  [[formats.output.devapp]]
+  levels = [ "function", "module" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_trace1"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName -out-"
+
+[policies]
+  [policies.rollover.prodapp]
+  condition = "every day at 03:00"
+  keep = 32
+  compression = "gzip"
+
+  [policies.rollover.devapp]
+  condition = "size > 32m"
+  keep = 100
+  compression = "gzip"
+
+[[resources]]
+# Resource for trace server itself
+kind = "file"
+app_ids = [1000]
+levels = [ "all" ]
+output_format = "prodapp"
+name = "$ProcessName_$Date.log"
+rollover = "prodapp"
+
+[[resources]]
+# Resource for production client application
+kind = "file"
+app_ids = [9876]
+levels = [ "all" ]
+output_format = "prodapp"
+name = "$ProcessName_$Date.log"
+rollover = "prodapp"
+
+[[resources]]
+# Resource for client application under development
+kind = "file"
+app_ids = [9999]
+levels = [ "all" ]
+output_format = "devapp"
+name = "$ProcessName_$ThreadName.trc"
+rollover = "devapp"

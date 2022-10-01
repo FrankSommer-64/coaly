@@ -1,0 +1,6 @@
+##################################################################################################
+## Date format with length specifier for year.
+##
+[formats]
+  [formats.datetime]
+  my_default = { date = "%4Y-%m-%d" }

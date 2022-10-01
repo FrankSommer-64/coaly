@@ -1,0 +1,5 @@
+##################################################################################################
+## Resource descriptor, remote URL not specified for network interface
+[[resources]]
+kind = "network"
+levels = [ "all" ]

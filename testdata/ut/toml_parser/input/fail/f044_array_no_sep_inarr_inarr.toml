@@ -1,0 +1,2 @@
+# Array: missing separator between inner arrays
+array = [ [ 3 ] [1,2] ]

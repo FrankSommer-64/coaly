@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:67108864/IS:2097152/C:1/L:4096}
+Line 4: No valid record index size for buffer policy "my_default" specified. Using default value 2097152.

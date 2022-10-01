@@ -1,0 +1,2 @@
+DEF:{N:default/COND:SZ:20971520/KEEP:9/CMPR:none}/CUST:
+Line 5: Invalid condition for rollover policy "my_default": Invalid interval moment "99", minute between 0 and 59 required. Policy ignored.

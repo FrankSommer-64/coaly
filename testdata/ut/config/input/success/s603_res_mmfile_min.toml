@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor for a memory mapped file with mandatory attributes only
+##
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+size = 20_000_000
+name = "$ProcessName_$Date.log"

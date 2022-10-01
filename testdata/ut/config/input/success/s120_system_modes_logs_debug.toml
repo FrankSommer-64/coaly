@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes logs and debug.
+##
+[system]
+  [system.mode]
+  enabled = ["debug","logs"]
+  buffered = ["debug", "logs"]

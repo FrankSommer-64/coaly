@@ -1,0 +1,2 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:1000000/IS:50000/C:1/L:4096}
+Line 8: Value for parameter "policies.buffer.my_default.max_record_length" must be an integer between 1 and 9223372036854775807. Using default value 4096.

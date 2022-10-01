@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to notice
+##
+[system]
+  [system.mode]
+  enabled = ["notice"]
+  buffered = [ "notice" ]

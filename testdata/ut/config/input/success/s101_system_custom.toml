@@ -1,0 +1,29 @@
+##################################################################################################
+## Custom settings for all system properties
+##
+[system]
+  version = "13"
+  app_id = 99
+  app_name = "test"
+  change_stack_size = 256000
+  output_path = "/var/testing/coaly"
+  fallback_path = "$Env[COALY_FALLBACK_PATH]"
+  [system.levels]
+  error = { id = 'D', name = "DEBUG" }
+  function = { id = 'E', name = "ERROR" }
+  info = { id = 'F', name = "FUNC" }
+  module = { id = 'I', name = "INFO" }
+  object = { id = 'M', name = "MOD" }
+  warning = { id = 'O', name = "OBJ" }
+  debug = { id = 'W', name = "WARNING" }
+  [system.mode]
+  enabled = [ "error", "function" ]
+  buffered = [ "traces" ]
+
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+output_format = "default"
+name = "$ProcessName_$Date.log"
+rollover = "default"
+buffer = "default"

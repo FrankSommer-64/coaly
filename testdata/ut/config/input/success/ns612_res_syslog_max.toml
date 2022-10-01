@@ -1,0 +1,11 @@
+##################################################################################################
+## Resource descriptor for syslog with all possible attributes
+##
+[[resources]]
+kind = "syslog"
+levels = [ "problems" ]
+facility = 2
+output_format = "my_out_format"
+local_url = "udp://127.0.0.1:0"
+remote_url = "udp://127.0.0.1:514"
+buffer = "my_buff_policy"

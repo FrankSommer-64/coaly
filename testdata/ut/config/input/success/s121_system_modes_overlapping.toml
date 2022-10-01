@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes with overlapping levels.
+##
+[system]
+  [system.mode]
+  enabled = ["error","logs","debug"]
+  buffered = ["traces", "units", "warning"]

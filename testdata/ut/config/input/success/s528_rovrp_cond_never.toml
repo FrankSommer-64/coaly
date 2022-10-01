@@ -1,0 +1,5 @@
+##################################################################################################
+## Rollover policy with condition "no rollover"
+##
+[policies.rollover.my_default]
+condition = "never"

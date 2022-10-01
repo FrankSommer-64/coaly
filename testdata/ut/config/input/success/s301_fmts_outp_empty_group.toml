@@ -1,0 +1,5 @@
+##################################################################################################
+## Empty parameter group for output formats.
+##
+[formats]
+  [formats.output]

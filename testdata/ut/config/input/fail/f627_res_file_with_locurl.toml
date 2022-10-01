@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, local URL for file specified
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+name = "coaly.log"
+local_url = "tcp://127.0.0.1:2345"

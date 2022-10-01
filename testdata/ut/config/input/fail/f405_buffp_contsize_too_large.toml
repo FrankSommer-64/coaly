@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification higher than allowed minimum.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = "12345678901234567890"
+index_size = "10000"

@@ -1,0 +1,6 @@
+##################################################################################################
+## Level ID character string too long
+##
+[system]
+  [system.levels]
+  debug = { id = 'DEB' }

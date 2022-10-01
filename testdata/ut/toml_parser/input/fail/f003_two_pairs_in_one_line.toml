@@ -1,0 +1,2 @@
+# There must be a newline (or EOF) after a key/value pair.
+first = "Tom" last = "Preston-Werner" # INVALID

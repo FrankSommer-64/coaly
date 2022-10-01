@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor with both enabled and buffered levels specified as string value
+##
+[[modes]]
+trigger = "module"
+name = "my_mod"
+enabled = "all"
+buffered = "traces"

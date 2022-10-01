@@ -1,0 +1,6 @@
+##################################################################################################
+## Rollover policy with compression attribute not specified.
+##
+[policies.rollover.my_default]
+condition = "size > 20m"
+keep = 9

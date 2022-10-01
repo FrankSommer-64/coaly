@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, name for stdout specified
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+name = "console"

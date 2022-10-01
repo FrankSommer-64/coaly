@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with an duülicate flush conditions.
+##
+[policies.buffer.my_default]
+flush = [ "error", "exit", "error" ]
+content_size = "32M"
+index_size = "1M"

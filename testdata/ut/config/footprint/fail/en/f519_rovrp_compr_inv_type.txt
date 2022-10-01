@@ -1,0 +1,3 @@
+DEF:{N:default/COND:SZ:20971520/KEEP:9/CMPR:none}/CUST:{my_default:N:my_default/COND:SZ:20971520/KEEP:9/CMPR:none}
+Line 7: Parameter "policies.rollover.my_default.compression" requires a string value.
+Line 7: Unknown compression algorithm . Using default value none.

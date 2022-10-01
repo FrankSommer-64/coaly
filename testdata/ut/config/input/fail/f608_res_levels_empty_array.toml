@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, record levels specified as empty array
+##
+[[resources]]
+kind = "stderr"
+levels = []

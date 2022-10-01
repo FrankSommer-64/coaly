@@ -1,0 +1,5 @@
+##################################################################################################
+## Resource descriptor without record levels
+##
+[[resources]]
+kind = "stderr"

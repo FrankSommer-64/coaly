@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with empty flush conditions array.
+##
+[policies.buffer.my_default]
+flush = []
+content_size = "32M"
+index_size = "1M"

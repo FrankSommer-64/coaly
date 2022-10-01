@@ -1,0 +1,3 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:
+Line 5: "printer" is not a valid kind for a resource.
+Line 4: Kind and at least one record level must be specified for a resource. Resource ignored.

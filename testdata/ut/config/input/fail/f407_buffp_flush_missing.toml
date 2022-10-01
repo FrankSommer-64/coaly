@@ -1,0 +1,6 @@
+##################################################################################################
+## Buffer policy with missing flush conditions.
+##
+[policies.buffer.my_default]
+content_size = "32M"
+index_size = "1M"

@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes specified as single string values.
+##
+[system]
+  [system.mode]
+  enabled = "error"
+  buffered = "traces"

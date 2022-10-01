@@ -1,0 +1,3 @@
+DEF:{N:default/CS:8388608/IS:1048576/C:10001/L:4096}/CUST:{my_default:N:my_default/CS:1048576/IS:32768/C:1/L:4096}
+Line 7: Value for parameter "policies.buffer.my_default.index_size" must be an integer between 4096 and 4294967295. Using default value 1048576.
+Line 4: No valid record index size for buffer policy "my_default" specified. Using default value 32768.

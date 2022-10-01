@@ -1,0 +1,9 @@
+AID:0/APP:/CSS:32768/OPP:%projroot/FBP:%systmp/ENA:1111111/BUF:0/LVL:{ID:emergency/CH:Y/N:EMGCY},{ID:alert/CH:A/N:ALERT},{ID:critical/CH:C/N:CRIT},{ID:error/CH:E/N:ERROR},{ID:warning/CH:W/N:WARN},{ID:notice/CH:N/N:NOTICE},{ID:info/CH:I/N:INFO},{ID:debug/CH:D/N:DEBUG},{ID:function/CH:F/N:FUNC},{ID:module/CH:M/N:MOD},{ID:object/CH:O/N:OBJ}
+Line 6: Value for parameter "system.app_id" must be an integer between 0 and 18446744073709551615. Using default value 0.
+Line 7: Parameter "system.app_name" requires a string value.
+Line 8: Value for parameter "system.change_stack_size" must be an integer between 16 and 2147483647. Using default value 32768.
+Line 10: Parameter "system.fallback_path" requires a string value.
+Line 12: Parameter group "system.levels.debug" is not associated with a TOML table. Using default for entire group.
+Line 15: Parameter "system.mode.buffered" is not associated with a TOML array.
+Line 14: Parameter "system.mode.enabled" is not associated with a TOML array.
+Line 9: Parameter "system.output_path" requires a string value.

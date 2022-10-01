@@ -1,0 +1,2 @@
+DEF:{N:/DT:-/TM:-/TS:-}/CUST:{my_default:N:my_default/DT:-/TM:-/TS:-}
+Line 6: Invalid specifier "%x" in date time format "formats.datetime.my_default.time". Format ignored.

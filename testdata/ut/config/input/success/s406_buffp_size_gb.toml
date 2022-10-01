@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification in GBytes.
+##
+[policies.buffer.my_default]
+  content_size = "2g"
+  index_size = "1g"
+  flush = [ "exit" ]

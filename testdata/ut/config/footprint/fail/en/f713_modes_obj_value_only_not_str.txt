@@ -1,0 +1,3 @@
+{GO:[]/LO:[]/LU:[]}
+Line 6: Parameter "modes.value" requires a string value.
+Line 4: Mode specification lacks at least one of the mandatory attributes trigger, name/value and enabled/buffered. Mode ignored.

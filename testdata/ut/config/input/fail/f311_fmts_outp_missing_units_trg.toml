@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format with missing triggers for creation and drop.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "message" ]
+  levels = [ "all" ]
+  items = ""

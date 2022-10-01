@@ -1,0 +1,10 @@
+##################################################################################################
+## Resource descriptor for a plain file with all possible attributes
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+name = "$ProcessName_$Date.log"
+output_format = "my_out_fmt"
+rollover = "my_rovr_policy"
+buffer = "my_buff_policy"

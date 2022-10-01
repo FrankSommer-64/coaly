@@ -1,0 +1,3 @@
+{GO:[]/LO:[]/LU:[]}
+Line 4: Parameter "value" for mode with trigger function or module ignored.
+Line 4: For mode change triggers function and module it is mandatory to specify parameter "name". Mode ignored.

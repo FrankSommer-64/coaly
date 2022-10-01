@@ -1,0 +1,1 @@
+AID:99/APP:test/CSS:256000/OPP:/var/testing/coaly/FBP:%fallbackpath/ENA:100001000/BUF:11110000000/LVL:{ID:emergency/CH:Y/N:EMGCY},{ID:alert/CH:A/N:ALERT},{ID:critical/CH:C/N:CRIT},{ID:error/CH:D/N:DEBUG},{ID:warning/CH:O/N:OBJ},{ID:notice/CH:N/N:NOTICE},{ID:info/CH:F/N:FUNC},{ID:debug/CH:W/N:WARNING},{ID:function/CH:E/N:ERROR},{ID:module/CH:I/N:INFO},{ID:object/CH:M/N:MOD}

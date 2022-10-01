@@ -1,0 +1,12 @@
+##################################################################################################
+## Output format with missing triggers for message.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "creation" ]
+  levels = [ "function", "module", "object" ]
+  items = ""
+  [[formats.output.my_format]]
+  triggers = [ "drop" ]
+  levels = [ "function", "module", "object" ]
+  items = ""

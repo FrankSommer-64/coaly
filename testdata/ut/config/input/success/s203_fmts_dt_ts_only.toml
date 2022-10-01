@@ -1,0 +1,6 @@
+##################################################################################################
+## Date-time format with custom date and time only.
+##
+[formats]
+  [formats.datetime]
+  my_default = { timestamp = "%d.%m.%y-%H:%M:%S.%3fT%z(%Z)" }

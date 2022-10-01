@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with record index size specification higher than allowed minimum.
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = "32M"
+index_size = "12345678901234567890"

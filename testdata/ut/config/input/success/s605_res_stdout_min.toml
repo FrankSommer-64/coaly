@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor for standard output with mandatory attributes only
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]

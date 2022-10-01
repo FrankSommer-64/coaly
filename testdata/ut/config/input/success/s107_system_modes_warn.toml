@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to warning
+##
+[system]
+  [system.mode]
+  enabled = ["warning"]
+  buffered = [ "warning" ]

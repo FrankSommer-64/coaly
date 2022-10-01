@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, invalid record level specified
+##
+[[resources]]
+kind = "stderr"
+levels = [ "custom" ]

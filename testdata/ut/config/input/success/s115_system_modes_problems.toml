@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to problems
+##
+[system]
+  [system.mode]
+  enabled = ["problems"]
+  buffered = [ "problems" ]

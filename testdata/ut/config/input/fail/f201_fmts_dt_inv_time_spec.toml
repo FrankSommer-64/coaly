@@ -1,0 +1,6 @@
+##################################################################################################
+## Time format with invalid specifier.
+##
+[formats]
+  [formats.datetime]
+  my_default = { time = "%x%y%z" }

@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, output format not specified as string
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+output_format = []

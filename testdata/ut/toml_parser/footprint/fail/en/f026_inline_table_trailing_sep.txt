@@ -1,0 +1,1 @@
+Could not process file %inputfile. Line 2, column 30: Trailing comma is not allowed in an inline table.

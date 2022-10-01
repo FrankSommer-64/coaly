@@ -1,0 +1,25 @@
+# Separator|TestCaseName|Input|OK/ERR|ExpectKey(true/false)|TokenId|ValueType|StringValue|SpecificValue|ExceptionId
+|BareKeyEoi|key|OK|true|Key|String|key||
+|BareKeySpace|key |OK|true|Key|String|key||
+|BareKeyLf|key\n|OK|true|Key|String|key||
+|BareKeyCr|key\r|OK|true|Key|String|key||
+|BareKeyTab|key\t|OK|true|Key|String|key||
+|BareKeyDot|key.|OK|true|Key|String|key||
+|BareKeyUnderscore|bare_key|OK|true|Key|String|bare_key||
+|BareKeyDash|bare-key|OK|true|Key|String|bare-key||
+|BareKeyDigits|1234|OK|true|Key|String|1234||
+|DQKeyEoi|"127.0.0.1"|OK|true|Key|String|127.0.0.1||
+|DQKeySpace|"127.0.0.1" |OK|true|Key|String|127.0.0.1||
+|DQKeyLf|"127.0.0.1"\n|OK|true|Key|String|127.0.0.1||
+|DQKeyCr|"127.0.0.1"\r|OK|true|Key|String|127.0.0.1||
+|DQKeyTab|"127.0.0.1"\t|OK|true|Key|String|127.0.0.1||
+|DQKeyDot|"127.0.0.1".|OK|true|Key|String|127.0.0.1||
+|DQKeyEmpty|""|OK|true|Key|String|||
+|DQKeySpecialChars|"ʎǝʞ"|OK|true|Key|String|ʎǝʞ||
+|SQKeyEoi|'quoted "value"'|OK|true|Key|String|quoted "value"||
+|SQKeySpace|'quoted "value"' |OK|true|Key|String|quoted "value"||
+|SQKeyLf|'quoted "value"'\n|OK|true|Key|String|quoted "value"||
+|SQKeyCr|'quoted "value"'\r|OK|true|Key|String|quoted "value"||
+|SQKeyTab|'quoted "value"'\t|OK|true|Key|String|quoted "value"||
+|SQKeyDot|'quoted "value"'.|OK|true|Key|String|quoted "value"||
+|SQKeyEmpty|''|OK|true|Key|String|||

@@ -1,0 +1,7 @@
+##################################################################################################
+## Buffer policy with size specification as integer value.
+##
+[policies.buffer.my_default]
+  content_size = 1_000_000
+  index_size = 25_000
+  flush = [ "exit" ]

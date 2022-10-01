@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, rollover policy not specified as string
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+name = "coaly.log"
+rollover = []

@@ -1,0 +1,3 @@
+{GO:[]/LO:[]/LU:[]}
+Line 7: Parameter "modes.enabled" is not associated with a TOML array.
+Line 4: Mode specification lacks at least one of the mandatory attributes trigger, name/value and enabled/buffered. Mode ignored.

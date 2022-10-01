@@ -1,0 +1,47 @@
+H:nutria A:testapp(1234) L:Y(EMGCY) S:app.rs:130 M:PANIC
+H:nutria A:testapp(1234) L:A(ALERT) S:app.rs:132 M:ALERT
+H:nutria A:testapp(1234) L:C(CRIT) S:app.rs:134 M:CRITICAL SITUATION
+H:nutria A:testapp(1234) L:E(ERROR) S:app.rs:136 M:Hatamal a fatal error
+H:nutria A:testapp(1234) L:W(WARN) S:app.rs:138 M:Beware of the dog
+H:nutria A:testapp(1234) L:Y(EMGCY) S:app.rs:175 M:LOCAL PANIC
+H:nutria A:testapp(1234) L:A(ALERT) S:app.rs:176 M:LOCAL ALERT
+H:nutria A:testapp(1234) L:C(CRIT) S:app.rs:177 M:LOCAL CRITICAL SITUATION
+H:nutria A:testapp(1234) L:E(ERROR) S:app.rs:178 M:LOCAL ERROR
+H:nutria A:testapp(1234) L:W(WARN) S:app.rs:179 M:LOCAL WARNING
+H:nutria A:testapp(1234) L:M(MOD) S:systemtest/chamaeleon/app.rs:218 M:testmod entered
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs:219 M:api_function entered
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs:224 M:mod_function entered
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs:205 M:TestmodMsg with val >Data< created
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs M:TestmodMsg with val >Data< dropped
+H:nutria A:testapp(1234) L:Y(EMGCY) S:app.rs:226 M:TESTMOD PANIC
+H:nutria A:testapp(1234) L:A(ALERT) S:app.rs:227 M:TESTMOD ALERT
+H:nutria A:testapp(1234) L:C(CRIT) S:app.rs:228 M:TESTMOD CRITICAL SITUATION
+H:nutria A:testapp(1234) L:E(ERROR) S:app.rs:229 M:TESTMOD ERROR
+H:nutria A:testapp(1234) L:W(WARN) S:app.rs:230 M:TESTMOD WARNING
+H:nutria A:testapp(1234) L:N(NOTICE) S:app.rs:231 M:TESTMOD NOTICE
+H:nutria A:testapp(1234) L:I(INFO) S:app.rs:232 M:TESTMOD INFO
+H:nutria A:testapp(1234) L:D(DEBUG) S:app.rs:233 M:TESTMOD DEBUG
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs M:mod_function left
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs M:api_function left
+H:nutria A:testapp(1234) L:M(MOD) S:systemtest/chamaeleon/app.rs M:testmod left
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs:191 M:mode_change_function entered
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs:173 M:local_function entered
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs:205 M:LocalMsg with val >DisonnectRequest< created
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs M:LocalMsg with val >DisonnectRequest< dropped
+H:nutria A:testapp(1234) L:Y(EMGCY) S:app.rs:175 M:LOCAL PANIC
+H:nutria A:testapp(1234) L:A(ALERT) S:app.rs:176 M:LOCAL ALERT
+H:nutria A:testapp(1234) L:C(CRIT) S:app.rs:177 M:LOCAL CRITICAL SITUATION
+H:nutria A:testapp(1234) L:E(ERROR) S:app.rs:178 M:LOCAL ERROR
+H:nutria A:testapp(1234) L:W(WARN) S:app.rs:179 M:LOCAL WARNING
+H:nutria A:testapp(1234) L:N(NOTICE) S:app.rs:180 M:LOCAL NOTICE
+H:nutria A:testapp(1234) L:I(INFO) S:app.rs:181 M:LOCAL INFO
+H:nutria A:testapp(1234) L:D(DEBUG) S:app.rs:182 M:LOCAL DEBUG
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs M:local_function left
+H:nutria A:testapp(1234) L:F(FUNC) S:systemtest/chamaeleon/app.rs M:mode_change_function left
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs:205 M:EssentialMsg with val >123< created
+H:nutria A:testapp(1234) L:O(OBJ) S:systemtest/chamaeleon/app.rs M:EssentialMsg with val >123< dropped
+H:nutria A:testapp(1234) L:Y(EMGCY) S:app.rs:175 M:LOCAL PANIC
+H:nutria A:testapp(1234) L:A(ALERT) S:app.rs:176 M:LOCAL ALERT
+H:nutria A:testapp(1234) L:C(CRIT) S:app.rs:177 M:LOCAL CRITICAL SITUATION
+H:nutria A:testapp(1234) L:E(ERROR) S:app.rs:178 M:LOCAL ERROR
+H:nutria A:testapp(1234) L:W(WARN) S:app.rs:179 M:LOCAL WARNING

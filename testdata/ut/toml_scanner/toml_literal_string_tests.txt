@@ -1,0 +1,10 @@
+# Separator|TestCaseName|Input|OK/ERR|ExpectKey(true/false)|TokenId|ValueType|StringValue|SpecificValue|ExceptionId
+|LiteralStringWinPath|'C:\\Users\\nodejs\\templates'|OK|false|Value|String|C:\\Users\\nodejs\\templates||
+|LiteralStringWinPath2|'\\\\ServerX\\admin$\\system32\\'|OK|false|Value|String|\\\\ServerX\\admin$\\system32\\||
+|LiteralStringDoubleQuote|'Tom "Dubs"\tPreston-Werner'|OK|false|Value|String|Tom "Dubs"\tPreston-Werner||
+|LiteralStringRegex|'<\\i\\c*\\s*>'|OK|false|Value|String|<\\i\\c*\\s*>||
+|LiteralStringEscape|'\\r\\n'|OK|false|Value|String|\\r\\n||
+|LiteralStringEmpty|''|OK|false|Value|String|||
+|LiteralStringNullAfterOpeningDelimiter|'|ERR|false|||||UnterminatedString
+|LiteralStringLineFeedAfterOpeningDelimiter|'\n|ERR|false|||||UnterminatedString
+|LiteralStringCarriageReturnAfterOpeningDelimiter|'\r\n|ERR|false|||||UnterminatedString

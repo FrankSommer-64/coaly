@@ -1,0 +1,5 @@
+##################################################################################################
+## Fallback root directory specified as relative path
+##
+[system]
+  fallback_path = "fallback"

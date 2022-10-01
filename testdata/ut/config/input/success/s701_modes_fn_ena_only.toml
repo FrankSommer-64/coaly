@@ -1,0 +1,7 @@
+##################################################################################################
+## Mode change descriptor for a function with change for enabled levels only.
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+enabled = [ "error" ]

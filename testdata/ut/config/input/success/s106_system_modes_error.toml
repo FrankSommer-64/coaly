@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to error
+##
+[system]
+  [system.mode]
+  enabled = ["error"]
+  buffered = [ "error" ]

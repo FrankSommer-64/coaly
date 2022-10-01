@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with interval condition 1 month at specific moment
+##
+[policies.rollover.my_default]
+condition = "every month at ultimo 23:59"
+keep = 9
+compression = ""

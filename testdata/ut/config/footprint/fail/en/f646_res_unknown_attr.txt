@@ -1,0 +1,2 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:{S:[0]/K:stdout/L:11111111111/BP:-/OF:-/SD:}
+Line 7: Unknown attribute "protected" for resource specification ignored. Allowed are kind, scope, name, levels, buffer, output_format, size, local_url and remote_url.

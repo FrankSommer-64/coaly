@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy month interval with invalid time in moment.
+##
+[policies.rollover.my_default]
+condition = "every 2 months at ultimo 22:99"
+keep = 9
+compression = ""

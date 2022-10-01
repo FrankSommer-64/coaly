@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, duplicate record level specified
+##
+[[resources]]
+kind = "stderr"
+levels = [ "error", "warning", "warning" ]

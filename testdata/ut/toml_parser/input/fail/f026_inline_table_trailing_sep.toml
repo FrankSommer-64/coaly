@@ -1,0 +1,2 @@
+# Inline table: trailing separator
+inline_table = {x=2, y=true, }

@@ -1,0 +1,2 @@
+{GO:[]/LO:[]/LU:[{SC:thread/K:module/N:my_mod/V:-/ENA:11111111111/BUF:11111111111}]}
+Line 4: Parameter "value" for mode with trigger function or module ignored.

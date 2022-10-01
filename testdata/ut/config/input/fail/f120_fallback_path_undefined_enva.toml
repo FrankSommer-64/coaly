@@ -1,0 +1,5 @@
+##################################################################################################
+## Fallback root directory with undefined environment variable
+##
+[system]
+  fallback_path = "$Env[NONEXISTENT]"

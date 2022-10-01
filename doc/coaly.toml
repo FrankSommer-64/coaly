@@ -1,0 +1,510 @@
+###################################################################################################
+## Sample Coaly configuration file with all supported parameters.
+##
+## The file uses TOML format.
+## Tables and key/value pairs are all documented inline below.
+##
+###################################################################################################
+
+###################################################################################################
+## General system properties.
+##
+[system]
+  # Format version of this file, optional.
+  # Currently not needed, but allows to keep backward compatibility for future changes.
+  version = "0.1"
+
+  # Application ID, defaults to 0.
+  # Used for access control and output resource selection on a logging server.
+  # Can be referenced in output records or resource names by variable $AppId.
+  app_id = 1234
+
+  # Application name, defaults to empty string.
+  # Can be referenced in output records or resource names by variable $AppName.
+  app_name = "myappname"
+
+  # Maximum number of active mode changes, defaults to 32768.
+  # As in most logging libraries, Coaly allows filtering based on the level of output
+  # records, like error or warning. These filter settings are called a mode in terms of Coaly,
+  # and may change during runtime.
+  # A mode change is triggered by the creation of a specific oberver struct and remains active
+  # until the struct is dropped. Such a struct is implicitly created when using the macros provided
+  # by Coaly API, or explicitly by creating a struct implementing a Coaly provided trait.
+  # Especially recursive functions may cause the internal stack of active mode changes to overflow.
+  # If the limit below is exceeded, further mode changes are ignored.
+  change_stack_size = 32768
+
+  # Output directory for resources of kind file or memory mapped file.
+  # The specification must resolve to an absolute path (starting with slash or drive letter).
+  # Defaults to path given in environment variable COALY_OUTPUT_PATH, or, if undefined,
+  # to application executable path.
+  #
+  # The following placeholder variables may be used for path specification:
+  # * $AppName - application name as defined by key system.app_name above
+  # * $Env[...] - environment variable, name specified within square brackets
+  # * $ProcessId - the process ID of the application
+  # * $ProcessName - the name of the application's executable file
+  output_path = "/var/log/$ProcessName"
+
+  # Directory to use in emergency cases, e.g. if regular output directory is not writable or
+  # network is temporarily down.
+  # The specification must resolve to an absolute path (starting with slash or drive letter).
+  # Defaults to path given in environment variable COALY_FALLBACK_PATH, or, if undefined,
+  # to platform temp directory (/tmp on Linux and BSD, C:\Temp on Windows).
+  # The same placeholder variables as for output_path may be used.
+  fallback_path = "$Env[TEMP]"
+
+  # ID characters and names for all record levels.
+  # Levels related to messages are adopted from syslog protocol.
+  # The key/value pairs below define the default settings.
+  # Different record levels must not use the same ID character or name.
+  # Can be referenced in output records or resource names by variables $LevelId resp. $Level.
+  [system.levels]
+  emergency = { id = 'Y', name = "EMGCY" }
+  alert = { id = 'A', name = "ALERT" }
+  critical = { id = 'C', name = "CRIT" }
+  error = { id = 'E', name = "ERROR" }
+  warning = { id = 'W', name = "WARNING" }
+  notice = { id = 'N', name = "NOTICE" }
+  info = { id = 'I', name = "INFO" }
+  debug = { id = 'D', name = "DEBUG" }
+  function = { id = 'F', name = "FUNC" }
+  module = { id = 'M', name = "MOD" }
+  object = { id = 'O', name = "OBJ" }
+
+  # Mode setting upon application start, may change during runtime.
+  # Only output records with enabled levels are written to output.
+  # Record levels contained in the buffered list are buffered in memory.
+  # Choose from:
+  # * empty list - all record levels disabled resp. not buffered,
+  #                meaning no output will be written at all resp. nothing is buffered
+  # * "emergency" - system failure informations
+  # * "alert" - informations about a failure requiring immediate action
+  # * "critical" - hard device failure informations
+  # * "error" - operation failure informations
+  # * "warning" - information about a recovered failure
+  # * "notice" - significant information
+  # * "info" - general useful information, e.g. application progress
+  # * "debug" - detailed diagnostic informations
+  # * "function" - function entry and exit
+  # * "module" - module entry and exit
+  # * "object" - information from logging relevant application objects
+  # * "logs" - groups levels emergency through info
+  # * "problems" - groups levels emergency through warning
+  # * "traces" - groups levels debug, function, module and object
+  # * "units" - groups levels function and module
+  # * "all" - all record levels
+  [system.mode]
+  enabled = [ "logs" ]
+  buffered = [ ]
+
+###################################################################################################
+## Logging server properties, ignored for normal applications.
+##
+[server]
+  # Network address to use for output records from clients.
+  # Make sure to enclose IPv6 addresses in square brackets and specify a valid port number between
+  # 1 and 65535, ports lower than 1024 require root permission.
+  # Defaults to "udp://127.0.0.1:3690", port defaults to 3690, if omitted.
+  data_addr = "udp://127.0.0.1:3690"
+
+  # Network address to use for administrative commands to the server.
+  # Make sure to enclose IPv6 addresses in square brackets and specify a valid port number between
+  # 1 and 65535, ports lower than 1024 require root permission for the application.
+  # No default provided, i.e. administration over network is disabled.
+  # Port defaults to 3691, if omitted.
+  admin_addr = "udp://127.0.0.1:3691"
+
+  # Maximum number of simultaneous client connections accepted by the server.
+  # Defaults to 10.
+  max_connections = 10
+
+  # Maximum time to keep a UDP connection open after the last message has been received, in seconds.
+  # Defaults to one day, ignored for TCP connections.
+  keep_connection = 86400
+
+  # Buffer size used by the server to receive messages from clients.
+  # Messages exceeding this limit are truncated.
+  # Defaults to 64 Kilobytes.
+  max_msg_size = "64K"
+
+  # Secret key that must be supplied by clients when issuing administrative commands.
+  # Mandatory, if key server.admin_addr above is defined, otherwise ignored.
+  admin_key = "topsecret"
+
+  # Clients allowed to send output records to the server.
+  # Defaults to any client on the same host will be accepted.
+  # Every specification in the array must cover at least source address or application ID, if both
+  # are present, both must match.
+  data_clients = [
+    # Source address must comply with pattern <protocol>://<IP address>:<port>.
+    # Protocol is either tcp, udp or unix.
+    # Wildcard * may be used for whole address or subnets.
+    # Port is optional and defaults to any port.
+    # Application ID 0 accepts any.
+    { source = "udp://127.0.0.1", app_ids = [ 9876 ] }
+  ]
+
+  # Clients allowed to send administrative commands, optional.
+  # Defaults to any client on the same host will be accepted.
+  # Source address must comply with pattern <protocol>://<IP address>:<port>.
+  # Protocol is either tcp, udp or unix.
+  # Wildcard * may be used for whole address or subnets.
+  # Port is optional and defaults to any port.
+  admin_clients = [ "udp://127.0.0.1" ]
+
+###################################################################################################
+## Format specifications.
+## Date-Time-Formats describe how date, time and date-time values are formatted.
+## Custom formats for date or time related values may be used within output records;
+## within resource names default formats are used to simplify the file rollover algorithm.
+##
+## Output formats describe which items are contained in output records and how the items are
+## ordered. Different formats can be specified depending on record level and/or record trigger.
+## Possible record levels are those listed under key system.levels.
+## Possible triggers are:
+## * "all" - any
+## * "creation" - the application created an observer struct
+##                (record levels "function", "module" and "object" only)
+## * "drop" - the application dropped an observer struct
+##            (record levels "function", "module" and "object" only)
+## * "message" - the application issued an output message
+##
+## The following placeholder variables can be used for item specification:
+## * $AppId - application ID as defined by key system.app_id
+## * $AppName - application name as defined by key system.app_name
+## * $Date - the current date
+## * $Env[...] - environment variable, name specified within square brackets
+## * $HostName - the host name
+## * $IpAddress - the host's IP address. Use on a logging server only, since detection on a client
+##                doesn't work realibly. On a server, the address is taken from the communication
+##                socket and shows the correct value, both for server and sending client(s).
+## * $Level - the record level of the output message
+## * $LevelId - the record level ID character of the output message
+## * $Message - the log or trace message issued by the application
+## * $ObserverName - the name of the observer struct that triggered the event
+##                   (record levels "function", "module" and "object" only)
+## * $ObserverValue - the user defined value of the observer struct that triggered the event
+##                    (record level "object" only)
+## * $ProcessId - the process ID of the application
+## * $ProcessName - the name of the application's executable file
+## * $PureSourceFileName - the name of the source file that issued the output record, without path
+## * $SourceFileName - the name of the source file that issued the output record, including
+##                     all parent directories starting under src
+## * $SourceLineNr - the line number in the source file, where an output record was issued
+##                   resp. an observer struct was created
+## * $ThreadId - the ID of the thread that issued the output record
+## * $ThreadName - the name of the thread that issued the output record. Defaults to
+##                 thread ID, if the name has not been set by the application
+## * $Time - the current time
+## * $TimeStamp - the current date and time
+##
+[formats]
+  # Default format if a date or time related placeholder variable is used in a log or trace record.
+  # For custom specifications, select a name (e.g. myformat) and supply a table with the
+  # desired formats ([formats.datetime.myformat] in that case).
+  # Parameter timestamp corresponds to placeholder variable $TimeStamp, date to $Date and
+  # time to $Time.
+  # All declarations are optional, missing parameters are complemented with default values.
+  # Allowed date specifiers are:
+  # * %d - day (2 digits)
+  # * %m - month (2 digits)
+  # * %y - 2-digit year
+  # * %Y - 4-digit year
+  # Allowed time specifiers are:
+  # * %f - fractional seconds, optional with precision 1-9 digits, for 3 digits use %3f
+  # * %H - hour 00-23
+  # * %I - hour 01-12
+  # * %p - am or pm
+  # * %P - AM or PM
+  # * %M - minute 00-59
+  # * %S - second 00-59
+  # Allowed timestamp specifiers are:
+  # * all those allowed for date and time specifiers
+  # * %z - timezone without colon (+0100, -0300, Z)
+  # * %Z - timezone with colon (+01:00, -03:00, Z)
+  [formats.datetime]
+  # Default format, if a date or time related variable is used in an output record.
+  output_default = {timestamp = "%d.%m.%y %H:%M:%S%.3f", date = "%d.%m.%y", time = "%H:%M:%S.%3f"}
+
+  # Default output format, specified with an array of tables.
+  # Use different table entries for different record level/trigger combinations.
+  # Make sure all combinations are specified exactly once. Missing combinations are complemented
+  # with system defaults, if a combination matches more than one table entry, the first match
+  # is significant.
+
+  # Combination all record levels for trigger "log or trace message"
+  [[formats.output.default]]
+  levels = [ "all" ]
+  triggers = [ "message" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$Message"
+
+  # Combination custom observer object for trigger "observer object creation"
+  [[formats.output.default]]
+  levels = [ "object" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName created"
+
+  # Combination custom observer object for trigger "observer object drop"
+  [[formats.output.default]]
+  levels = [ "object" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName dropped"
+
+  # Combination function/module for trigger "observer object creation" (i.e. function or module is entered)
+  [[formats.output.default]]
+  levels = [ "function", "module" ]
+  triggers = [ "creation" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$ObserverName -in-"
+
+  # Combination function/module for trigger "observer object drop" (i.e. function or module is left)
+  [[formats.output.default]]
+  levels = [ "function", "module" ]
+  triggers = [ "drop" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName|$ObserverName -out-"
+
+###################################################################################################
+## Policies defining the system behaviour during runtime.
+##
+[policies]
+  # Rollover policies, apply to file based resources only.
+  # Rollover means, that the current file is closed and a new one opened, if a configurable
+  # condition occurs. Older files are renamed, optionally compressed and eventually deleted.
+  # The following properties can be configured:
+  # condition: mandatory, one of
+  # * "" - no rollover, only one file
+  # * "size > n[K|M|G]" - rollover, if file size exceeds this limit (default, 20 MByte)
+  # * "every [n] [second(s)|minute(s)|hour(s)|day(s)]" - rollover, if given time span after
+  #   application start has elapsed
+  # * "every [n] [hour(s)|day(s)|week(s)|month(s)] at <timestamp>" - periodic rollover, if given
+  #   timestamp is reached
+  #   Timestamp specification depends on the period's unit:
+  #   - for unit hour the timestamp must contain minute and second
+  #   - for unit day the timestamp must contain hour,minute and second
+  #   - for unit week the timestamp must contain day of week, hour, minute and second
+  #   - for unit month the timestamp must contain day, hour, minute and second
+  # keep: optional, number of old files to keep (default: 9)
+  # compression: optional, one of
+  # * "" - no compression (default) (default)
+  # * "bz2" - bzip2 compression
+  # * "gzip" - gzip compression
+  # * "lzma" - lzma compression
+  # * "zip" - ZIP compression
+  [policies.rollover.default]
+  condition = "size > 20m"
+  keep = 9
+  compression = "none"
+
+  # Buffer policies, apply to all resources except for memory mapped files.
+  # Applies to normal applications only, on a loggi g server buffering is always disabled.
+  # The following properties can be configured:
+  # flush: mandatory, flush condition(s), list with at least one of
+  # * <record-level> - upon ouput record with given record level
+  # * rollover - upon rollover of associated file
+  # * full - upon buffer full
+  # * exit - upon application exit (default)
+  # content_size: optional, buffer content size in bytes, optionally with unit suffix K, M or G.
+  #               Default is 32 MBytes.
+  # index_size: optional, maximum number of records the buffer may hold,
+  #             optionally with unit suffix K, M or G. Default is 1 MByte.
+  # max_record_length: optional, maximum length for an output record in bytes,
+  #                    longer records are truncated. Default is 4 KBytes.
+  [policies.buffer.default]
+  flush = [ "error", "rollover", "exit" ]
+  content_size = "32M"
+  index_size = "1M"
+  max_record_length = 4096
+
+###################################################################################################
+## Resources receiving log and trace output.
+## The parameters for resource kind and record levels are always mandatory.
+## Formatting of date/time related variables cannot be customized,
+## timestamp is always formatted as "%y%m%d%H%M%S", date as "%y%m%d" and time as "%H%M%S".
+## Supported resource kinds are:
+## * "file" - regular file
+## * "mmfile" - memory mapped file
+## * "stdout" - standard output device, usually terminal output
+## * "stderr" - standard error device, usually terminal output
+## * "network" - network connection to dedicated remote server providing a trace and log service
+## * "syslog" - syslog service (Unix) resp. Event Logger (Windows)
+## The following variables can be used for resource name specifications:
+## * $AppId - application name as defined by key system.app_id
+## * $AppName - application name as defined by key system.app_name
+## * $Date - the current date
+## * $Env[...] - environment variable, name specified within square brackets
+## * $HostName - the host name
+## * $ProcessId - the process ID of the application
+## * $ProcessName - the process name of the application
+## * $ThreadId - the ID of the thread that issued the log or trace message.
+##               All threads will write into their own resource in that case, it also implies that
+##               a separate buffer will be allocated for every thread when switiching
+##               to buffered mode.
+##               ThreadId takes precedence over ThreadName, if both are used in the resource name
+##               specification
+## * $ThreadName - the name of the thread that issued the log or trace message.
+##                 Defaults to thread ID, if the name has not been set.
+##                 All threads will write into their own resource in that case, it also implies
+##                 that a separate buffer will be allocated for every thread when switiching
+##                 to buffered mode.
+## * $Time - the current time
+## * $TimeStamp - the current date and time
+##
+
+# Example resource of kind plain file.
+[[resources]]
+# Resource kind, mandatory
+kind = "file"
+# Application IDs handled by the resource, optional. Defaults to [0], meaning applies to any
+# application ID.
+app_ids = [ 0 ]
+# Record levels handled by the resource, mandatory
+levels = [ "all" ]
+# Format to use for output records, the reference must match the last part of a
+# [[formats.output.xxx]] block from section formats.
+# Defaults to the specification of formats.output.default above.
+output_format = "default"
+# Pure file name without path, mandatory.
+# Path is taken from parameter system.output_path.
+# Path separator characters are not allowed in the specification and are replaced by underscores.
+name = "$ProcessName_$Date.log"
+# Policy, when to close current output file and rollover to a new one.
+# Defaults to "no rollover".
+rollover = "default"
+# Size and behaviour of memory buffer, when operation mode is changed to buffered
+# Defaults to "no buffering for all record levels".
+buffer = "default"
+
+# Example resource of kind memory mapped file.
+[[resources]]
+# Resource kind, mandatory
+kind = "mmfile"
+# Record levels handled by the resource, mandatory
+levels = [ "logs" ]
+# Format to use for output records, the reference must match the last part of a
+# [[formats.output.xxx]] block from section formats.
+# Defaults to the specification of formats.output.default above.
+output_format = "default"
+# File name, mandatory
+name = "$ProcessName_$Date.log"
+# Size of memory mapped file, defaults to 32 MBytes.
+size = "32M"
+
+# Example resource of kind stdout.
+[[resources]]
+# Resource kind, mandatory
+kind = "stdout"
+# Record levels handled by the resource, mandatory
+levels = [ "error" ]
+# Format to use for output records, the reference must match the last part of a
+# [[formats.output.xxx]] block from section formats.
+# Defaults to the specification of formats.output.default above.
+output_format = "default"
+# Size and behaviour of memory buffer, when operation mode is changed to buffered
+# Defaults to "no buffering for all record levels".
+buffer = "default"
+
+# Example resource of kind syslog.
+[[resources]]
+# Resource kind, mandatory
+kind = "syslog"
+# Facility for Unix syslog, defaults to 1 (user-level)
+facility = 1
+# Record levels handled by the resource, mandatory
+levels = [ "problems" ]
+# Format to use for output records, the reference must match the last part of a
+# [[formats.output.xxx]] block from section formats.
+# Defaults to the specification of formats.output.default above.
+output_format = "default"
+# Local address to use for communication to syslog daemon.
+# Defaults to "udp://127.0.0.1:0".
+# Enclose IP address in square brackets for IPv6.
+# Parameter can be used, if communication needs to be done on a non-default network interface, and/or
+# the local socket must be bound to a specific port to cope with firewall requirements.
+# The protocol must match that one used by syslog daemon.
+local_url = "udp://127.0.0.1:0"
+# Address of syslog service.
+# Defaults to "udp://127.0.0.1:514".
+# Enclose IP address in square brackets for IPv6.
+# The protocol must match that one used by syslog daemon.
+remote_url = "udp://127.0.0.1:514"
+# Size and behaviour of memory buffer, when operation mode is changed to buffered.
+# Defaults to "no buffering for all record levels".
+buffer = "default"
+
+# Example resource of kind network connection to logging server.
+# Record format is not needed, since formatting is done on the server.
+[[resources]]
+# Resource kind, mandatory
+kind = "network"
+# Record levels handled by the resource, mandatory
+levels = [ "all" ]
+# Local address to use for communication to logging server.
+# Defaults to "udp://127.0.0.1:0".
+# Enclose IP address in square brackets for IPv6.
+# Parameter can be used, if communication needs to be done on a non-default network interface, and/or
+# the local socket must be bound to a specific port to cope with firewall requirements.
+# The protocol must match that one used by the logging server.
+local_url = "tcp://[::1]:0"
+# Address of logging server.
+# Defaults to "udp://127.0.0.1:3690".
+# Enclose IP address in square brackets for IPv6.
+# The protocol must match that one used by the logging server.
+remote_url = "tcp://[::1]:7000"
+# Size and behaviour of memory buffer, when operation mode is changed to buffered.
+# Defaults to "no buffering for all record levels".
+buffer = "default"
+
+###################################################################################################
+## Output mode changes during runtime.
+## A mode change may occur when a function or module is entered or an observer struct is
+## created. A switch to the previous active mode occurs, when the function or module is left or
+## the observer struct is dropped.
+## The following properties can be configured:
+## trigger: observer struct causing the mode change, mandatory.
+##          One of "function", "module" or "object"
+## name: name of observer struct, mandatory for triggers "function" and "module".
+##       For "object" triggers, name and/or value must be specified.
+## value: application defined value of observer struct, relevant for "object" triggers only.
+## enabled: record levels enabled by the mode change, optional. Leaves currently enabled levels
+##          unchanged, if not specified at all. An empty list will disable all levels.
+## buffered: record levels to be buffered by the mode change, optional.
+##           Leaves currently buffered levels unchanged, if not specified at all.
+##           An empty list will not buffer any level.
+## scope: scope of the mode change, either "process" or "thread", defaults to "thread".
+##        Ignored for triggers "function" and "module", where the change always applies to
+##        the affected thread only.
+##        Scope "process" is implemented as an override mode, not as a stack. The mode change
+##        remains active, until the observer object that caused the change is dropped.
+##        While active, any process wide mode changes triggered by other observer objects are
+##        ignored. 
+##
+[[modes]]
+# Ignore all record levels except for errors and use buffering, when code in module stable
+# is executed.
+trigger = "module"
+name = "stable"
+enabled = [ "error" ]
+buffered = [ "all" ]
+
+# Enable and buffer all record levels in an error prone time critical function.
+[[modes]]
+trigger = "function"
+name = "time_critical"
+enabled = [ "all" ]
+buffered = [ "all" ]
+
+# Enable all record levels and buffer record levels debug, function, module and object,
+# whenever an observer object with the given value pattern is created.
+# This mode change shall affect the whole process.
+[[modes]]
+trigger = "object"
+value = "CLY.*"
+enabled = [ "all" ]
+buffered = [ "traces" ]
+scope = "process"
+

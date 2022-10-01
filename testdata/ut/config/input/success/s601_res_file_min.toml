@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor for a plain file with mandatory attributes only
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+name = "$ProcessName_$Date.log"

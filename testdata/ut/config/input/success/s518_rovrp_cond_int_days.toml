@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with interval condition 10 days
+##
+[policies.rollover.my_default]
+condition = "every 10 days"
+keep = 9
+compression = ""

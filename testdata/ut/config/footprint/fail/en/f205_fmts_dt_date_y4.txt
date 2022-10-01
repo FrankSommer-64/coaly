@@ -1,0 +1,2 @@
+DEF:{N:/DT:-/TM:-/TS:-}/CUST:{my_default:N:my_default/DT:-/TM:-/TS:-}
+Line 6: Invalid specifier "%4Y" in date time format "formats.datetime.my_default.date". Format ignored.

@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy week interval without moment.
+##
+[policies.rollover.my_default]
+condition = "every 2 weeks"
+keep = 9
+compression = ""

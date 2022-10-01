@@ -1,0 +1,1 @@
+AID:0/APP:/CSS:32768/OPP:%projroot/FBP:%systmp/ENA:1000/BUF:11110000000/LVL:{ID:emergency/CH:Y/N:EMGCY},{ID:alert/CH:A/N:ALERT},{ID:critical/CH:C/N:CRIT},{ID:error/CH:E/N:ERROR},{ID:warning/CH:W/N:WARN},{ID:notice/CH:N/N:NOTICE},{ID:info/CH:I/N:INFO},{ID:debug/CH:D/N:DEBUG},{ID:function/CH:F/N:FUNC},{ID:module/CH:M/N:MOD},{ID:object/CH:O/N:OBJ}

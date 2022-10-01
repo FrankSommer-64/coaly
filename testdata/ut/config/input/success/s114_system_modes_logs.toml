@@ -1,0 +1,7 @@
+##################################################################################################
+## Initial modes set to logs
+##
+[system]
+  [system.mode]
+  enabled = ["logs"]
+  buffered = [ "logs" ]

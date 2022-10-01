@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor for function, name attribute missing
+##
+[[modes]]
+trigger = "function"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

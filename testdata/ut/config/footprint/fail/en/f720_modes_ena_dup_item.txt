@@ -1,0 +1,2 @@
+{GO:[]/LO:[]/LU:[{SC:thread/K:function/N:my_func/V:-/ENA:11000/BUF:11111111111111111111111111111111}]}
+Line 7: Duplicate record level "error" for parameter "modes.enabled" ignored.

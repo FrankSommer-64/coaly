@@ -1,0 +1,2 @@
+# Boolean values are case sensitive
+not_a_boolean = TRUE

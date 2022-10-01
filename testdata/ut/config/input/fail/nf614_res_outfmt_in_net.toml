@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, output format specified for network interface
+##
+[[resources]]
+kind = "network"
+levels = [ "all" ]
+output_format = "my_outfmt"
+remote_url = "udp://192.168.200.122:7000"

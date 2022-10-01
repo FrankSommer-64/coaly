@@ -1,0 +1,6 @@
+##################################################################################################
+## Date format with invalid specifiers.
+##
+[formats]
+  [formats.datetime]
+  my_default = { date = "%Y-%m-%d %H:%M:%S" }

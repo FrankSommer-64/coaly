@@ -1,0 +1,6 @@
+##################################################################################################
+## Resource descriptor, record levels not specified as array
+##
+[[resources]]
+kind = "stderr"
+levels = 111

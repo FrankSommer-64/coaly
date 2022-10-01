@@ -1,0 +1,7 @@
+##################################################################################################
+## Mode change descriptor, neither buffered nor enabled specified
+##
+[[modes]]
+trigger = "function"
+name = "my_func"
+scope = "thread"

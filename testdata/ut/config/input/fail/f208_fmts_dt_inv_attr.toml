@@ -1,0 +1,6 @@
+##################################################################################################
+## Date-time format with invalid attribute.
+##
+[formats]
+  [formats.datetime]
+  my_default = { time = "%H:%M:%S", DATE = "%y-%m-%d" }

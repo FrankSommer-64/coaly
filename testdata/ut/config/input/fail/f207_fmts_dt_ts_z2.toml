@@ -1,0 +1,6 @@
+##################################################################################################
+## Timestamp format with length specifier for timezone.
+##
+[formats]
+  [formats.datetime]
+  my_default = { timestamp = "%Y-%m-%d%H:%M:%S%2z" }

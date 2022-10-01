@@ -1,0 +1,46 @@
+## Configuration file with:
+## - thread specific output resource of kind file
+## - output format using all placeholder variables
+## - no mode changes
+[system]
+  app_id = 1234
+  app_name = "testapp"
+  change_stack_size = 32768
+  output_path = "$Env[COALY_OUTPUT_PATH]"
+  fallback_path = "/tmp"
+[system.mode]
+  enabled = [ "all" ]
+  buffered = [ ]
+
+[formats]
+[[formats.output.mytest]]
+levels = [ "all" ]
+triggers = [ "message" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$PureSourceFileName:$SourceLineNr M:$Message"
+
+[[formats.output.mytest]]
+levels = [ "object" ]
+triggers = [ "creation" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName:$SourceLineNr M:$ObserverName with val >$ObserverValue< created"
+
+[[formats.output.mytest]]
+levels = [ "object" ]
+triggers = [ "drop" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName M:$ObserverName with val >$ObserverValue< dropped"
+
+[[formats.output.mytest]]
+levels = [ "function", "module" ]
+triggers = [ "creation" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName:$SourceLineNr M:$ObserverName entered"
+
+[[formats.output.mytest]]
+levels = [ "function", "module" ]
+triggers = [ "drop" ]
+items = "T:$Date/$Time/$TimeStamp H:$HostName A:$AppName($AppId) P:$ProcessName($ProcessId)-$ThreadName($ThreadId) L:$LevelId($Level) S:$SourceFileName M:$ObserverName left"
+
+# Example resource of kind plain file.
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+output_format = "mytest"
+name = "$AppName_$ThreadName_$Date.log"

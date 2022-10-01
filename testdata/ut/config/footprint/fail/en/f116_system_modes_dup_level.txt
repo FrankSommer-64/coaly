@@ -1,0 +1,3 @@
+AID:0/APP:/CSS:32768/OPP:%projroot/FBP:%systmp/ENA:11000/BUF:11111111111/LVL:{ID:emergency/CH:Y/N:EMGCY},{ID:alert/CH:A/N:ALERT},{ID:critical/CH:C/N:CRIT},{ID:error/CH:E/N:ERROR},{ID:warning/CH:W/N:WARN},{ID:notice/CH:N/N:NOTICE},{ID:info/CH:I/N:INFO},{ID:debug/CH:D/N:DEBUG},{ID:function/CH:F/N:FUNC},{ID:module/CH:M/N:MOD},{ID:object/CH:O/N:OBJ}
+Line 7: Duplicate record level "traces" for parameter "system.mode.buffered" ignored.
+Line 6: Duplicate record level "error" for parameter "system.mode.enabled" ignored.

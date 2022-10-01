@@ -1,0 +1,2 @@
+AID:0/APP:/CSS:32768/OPP:%projroot/FBP:%systmp/ENA:1111111/BUF:0/LVL:{ID:emergency/CH:Y/N:EMGCY},{ID:alert/CH:A/N:ALERT},{ID:critical/CH:C/N:CRIT},{ID:error/CH:E/N:ERROR},{ID:warning/CH:W/N:WARN},{ID:notice/CH:N/N:NOTICE},{ID:info/CH:I/N:INFO},{ID:debug/CH:D/N:DEBUG},{ID:function/CH:F/N:FUNC},{ID:module/CH:M/N:MOD},{ID:object/CH:O/N:OBJ}
+Line 12: ID "E" or name "WARNING" for record level "system.levels.warning" already used. Using default values for all record levels.

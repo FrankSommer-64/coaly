@@ -1,0 +1,177 @@
+# ================================  ERRORS  ================================
+# ---------- General errors ----------
+E-FileNotFound File %s not found.
+E-FileReadError Error reading file %s. %s
+E-FileWriteError Error writing to file %s: %s.
+E-FileCreationError Could not create file %s: %s.
+E-Int-InvalidResourceTemplate Internal error: Tried to create thread specific resource from non-template resource.
+E-Int-NotYetImplemented Functionality is not implemented yet.
+E-Int-EventFailed Internal error, could not send event to worker thread: %s.
+E-Int-EventsFailed Internal error, could not send %s events to worker thread. Last reason was: %s.
+E-Net-InvalidUrl The URL "%s" is not valid.
+E-Net-SocketCreationError Could not create socket to remote address %s: %s.
+E-Net-SocketReadError Error reading from socket (local=%s, remote=%s): %s.
+E-Net-SocketWriteError Error writing to socket (local=%s, remote=%s): %s.
+E-DeserializationError Error deserializing data structure %s.
+E-AccessDeniedByServer Logging server at address %s denied access: %s.
+E-ConnectProtocolError Unexpected response from logging server at address %s: Expected AccessGranted or AccessDenied message.
+E-MessageTooShort Received network packet too short for a Coaly message.
+E-MessageSizeMismatch Received network packet of size %s bytes does not match contained payload size of %s bytes.
+E-Net-InvalidAddressPattern %s is not a valid pattern for an IP socket address.
+E-Net-IP4OctetTooLarge Value %s is too large for an IP4 address octet.
+E-Net-IPPortTooLarge Value %s is too large for an IP port.
+E-Net-AlreadyConnected Create connection to %s failed. resource already connected.
+# ---------- TOML scanner errors ----------
+E-Cfg-Toml-DigitDelimiterNotEmbedded Line %s, column %s: Delimiter %s must be embedded within digits.
+E-Cfg-Toml-DigitExpected Line %s, column %s: Expected a digit but found %s.
+E-Cfg-Toml-EmptyFloatFract Line %s, column %s: Fractional part of number %s must contain at least one digit. 
+E-Cfg-Toml-FourDigitYearRequired Line %s, column %s: Year before %s must be specified with four digits.
+E-Cfg-Toml-InvalidChar Line %s, column %s: Invalid character %s.
+E-Cfg-Toml-InvalidControlChar Line %s, column %s: Invalid control character %s.
+E-Cfg-Toml-InvalidDate Line %s, column %s: Invalid date or date-time value.
+E-Cfg-Toml-InvalidEscapeChar Line %s, column %s: Character %s not allowed after escape character.
+E-Cfg-Toml-InvalidFloatExp Line %s, column %s: Invalid exponent in number %s.
+E-Cfg-Toml-InvalidKeyStart Line %s, column %s: Key must not start with character %s.
+E-Cfg-Toml-InvalidLineEndingEscape Line %s, column %s: Non-whitespace character %s after line ending backslash is not allowed.
+E-Cfg-Toml-InvalidNumChar Line %s, column %s: Character %s is not allowed here within a number.
+E-Cfg-Toml-InvalidNumDateTimeChar Line %s, column %s: Character %s is not allowed here within a number, date or time value.
+E-Cfg-Toml-InvalidRadixPrefix Line %s, column %s: Radix prefix must be one of 0b, 0o or 0x.
+E-Cfg-Toml-InvalidTime Line %s, column %s: Time value in %s does not conform to required format hh:mm:ss[,u].
+E-Cfg-Toml-InvalidUnicodeEscapeChar Line %s, column %s: Character %s not allowed in unicode escape sequences.
+E-Cfg-Toml-InvalidUnicodeEscapeSeq Line %s, column %s: Invalid unicode escape sequence %s.
+E-Cfg-Toml-InvalidValue Line %s, column %s: Invalid value %s.
+E-Cfg-Toml-InvalidValueStart Line %s, column %s: Value must not start with character %s.
+E-Cfg-Toml-LeadingZeroNotAllowed Line %s, column %s: Number with leading %s is not allowed.
+E-Cfg-Toml-LineTermInSingleLineString Line %s, column %s: Line ending character %s not allowed in single line strings.
+E-Cfg-Toml-TimezoneOrMillisExpected Line %s, column %s: Time zone or milli second specification expected.
+E-Cfg-Toml-TooManyQuotes Line %s, column %s: Found more than three consecutive string delimiter characters %s.
+E-Cfg-Toml-TwoDigitDayRequired Line %s, column %s: Invalid date value, day must be specified with two digits.
+E-Cfg-Toml-TwoDigitHourRequired Line %s, column %s: Hour before %s must be specified with two digits.
+E-Cfg-Toml-TwoDigitMonthRequired Line %s, column %s: Invalid date value, month must be specified with two digits.
+E-Cfg-Toml-UnterminatedString Line %s, column %s: String starting here is not terminated.
+# ---------- TOML parser errors ----------
+E-Cfg-Toml-ClosingBracketExpected Line %s: Closing bracket(s) expected.
+E-Cfg-Toml-CommaExpected Line %s, column %s: Expected comma, but found %s.
+E-Cfg-Toml-CommaOrRBraceExpected Line %s, column %s: Expected comma or right brace, but found %s.
+E-Cfg-Toml-DuplicateSeparatorToken Line %s, column %s: Two consecutive commas are not allowed.
+E-Cfg-Toml-EqualExpected Line %s: Equal sign expected after key.
+E-Cfg-Toml-InvalidArrayToken Line %s, column %s: %s is not allowed within a value array specification.
+E-Cfg-Toml-InvalidKeyTermination Line %s: Expected %s after key, but found %s.
+E-Cfg-Toml-KeyAlreadyInUse Line %s: Key %s has already been explicitly defined.
+E-Cfg-Toml-KeyExpected Line %s, colum %s: Expected key after opening bracket, but found %s.
+E-Cfg-Toml-KeyOrTableExpected Line %s, column %s: Expected key, table or array of tables, but found %s.
+E-Cfg-Toml-KeyUsedForArrayOfTables Line %s: Key %s already used for an array of tables.
+E-Cfg-Toml-KeyUsedForSimpleValue Line %s: Key %s already used for a simple value.
+E-Cfg-Toml-KeyUsedForTable Line %s: Key %s already used for a table.
+E-Cfg-Toml-KeyUsedForValueArray Line %s: Key %s already used for a value array.
+E-Cfg-Toml-LeadingSeparator Line %s, column %s: Inline table or array contents must not start with a comma.
+E-Cfg-Toml-NoLineBreakAfterKeyValuePair Line %s: Key-value definition must be terminated with a line break.
+E-Cfg-Toml-NoLineBreakAfterHeader Line %s: Table header must be terminated with a line break.
+E-Cfg-Toml-NotATable Line %s: Key %s does not reference a table.
+E-Cfg-Toml-TableExists Line %s: Table %s is already defined.
+E-Cfg-Toml-TrailingDotInKey Line %s, column %s: Key must not end with a dot.
+E-Cfg-Toml-TrailingSeparator Line %s, column %s: Trailing comma is not allowed in an inline table.
+E-Cfg-Toml-TwoDotsWithinKey Line %s, column %s: Two consecutive dots in a key are not allowed.
+E-Cfg-Toml-UnexpectedKeyToken Line %s, column %s: %s is not expected within a key specification.
+E-Cfg-Toml-UnseparatedArrayItems Line %s, column %s: Array items must be separated by a comma.
+E-Cfg-Toml-UnseparatedKeyParts Line %s, column %s: Key parts must be separated by a dot.
+E-Cfg-Toml-UnterminatedArray Line %s, column %s: Value array starting here is not terminated.
+E-Cfg-Toml-UnterminatedInlineTable Line %s, column %s: Inline table starting here is not terminated.
+E-Cfg-Toml-ValueExpected Line %s, column %s: Value specification expected.
+E-Cfg-Toml-WhitespaceBetweenBrackets Line %s, column %s: Whitespace between table brackets is not allowed.
+E-Cfg-Toml-ParseFailed Could not process file %s. %s
+E-Cfg-FoundIssues Found issues for configuration file %s:
+E-Rovr-Failed Rollover for file %s failed: %s. Keeping current output file.
+E-Rovr-OpenInputFileFailed Error opening log file %s for rollover: %s.
+E-Rovr-OpenOutputFileFailed Error opening outputfile %s for rollover: %s.
+E-Rovr-WriteOutFileFailed Error writing outputfile %s for rollover: %s.
+E-Rovr-RenameFileFailed Error renaming outputfile %s to %s for rollover: %s.
+W-Rovr-RemoveFileFailed Error removing rollover file %s: %s.
+W-Rovr-CompressFailed Could not compress data of log file %s for rollover: %s.
+W-Rovr-GenericFailure Rollover failed: %s.
+W-Rovr-GenericFileFailure Rollover processing for file %s failed: %s.
+W-Rovr-UsingOldOutputFile Could not rollover to new file %s (%s). Still using file %s.
+E-Cfg-InvalidNetworkProtocol Invalid network protocol "%s". Allowed are "tcp" and "udp".
+E-Cfg-NetworkProtocolMismatch Network protocols for local and remote address differ.
+# ---------- Server errors ----------
+E-Srv-CfgFileNotSpecified Configuration file name must be specified for a logging server.
+E-Srv-PropertiesMissing No server properties defined in configuration file %s.
+E-Srv-InvalidDataAddress Data listen address %s is invalid.
+E-Srv-InvalidDataAddressInFile Invalid data listen address "%s" defined in configuration file %s.
+E-Srv-AccessDenied You are not allowed to access logging server.
+E-Srv-ClientLimitExceeded Logging server exceeded maximum number of clients.
+E-Srv-InternalError Logging internal server serror.
+E-Srv-AcceptConnectionFailed Could not accept incoming connection: %s.
+# ================================ WARNINGS ================================
+W-Cfg-UnknownKey Line %s: Unknown parameter %s ignored.
+W-Cfg-KeyIsNotAString Line %s: Parameter "%s" requires a string value.
+W-Cfg-KeyIsNotATable Line %s: Parameter group "%s" is not associated with a TOML table. Using default for entire group.
+W-Cfg-KeyIsNotAnArray Line %s: Parameter "%s" is not associated with a TOML array.
+W-Cfg-NumberRequired Line %s: Value for parameter "%s" must be an integer between %s and %s. Using default value %s.
+W-Cfg-InvalidLevelIdChar Line %s: ID character for record level "%s" must be string with exactly one character. Using default values for all record levels.
+W-Cfg-InvalidLevelName Line %s: Name for record level "%s" must be a string. Using default values for all record levels.
+W-Cfg-EmptyLevelName Line %s: Name for record level "%s" must not be empty. Using default values for all record levels.
+W-Cfg-InvalidLevel Line %s: Unknown record level "%s" for parameter "%s". Using default values for all record levels.
+W-Cfg-InvalidLevelReference Line %s: Unknown record level "%s" for parameter "%s".
+W-Cfg-DuplicateLevel Line %s: Duplicate record level "%s" for parameter "%s" ignored.
+W-Cfg-InvalidLevelAttribute Line %s: Unknown parameter "%s" for record level "%s". Using default values for all record levels.
+W-Cfg-DuplicateLevelValue Line %s: ID "%s" or name "%s" for record level "%s" already used. Using default values for all record levels.
+W-Cfg-DuplicateLevelValues Line %s: One of the record level ID characters or names specified collides with defaults. Using default values for all record levels.
+W-Cfg-InvalidTrigger Line %s: Unknown record trigger "%s" for parameter "%s" ignored.
+W-Cfg-DuplicateTrigger Line %s: Duplicate record trigger "%s" for parameter "%s" ignored.
+W-Cfg-InvalidRolloverFileSize %s is not a valid specification for the maximum file size for rollover.
+W-Cfg-InvalidRolloverAttribute Line %s: Unknown attribute "%s" for rollover policy "%s". Allowed are compression, keep and condition.
+W-Cfg-MissingRolloverCondition Line %s: No condition for rollover policy "%s" specified. Policy ignored.
+W-Cfg-InvalidRolloverCondition Line %s: Invalid condition for rollover policy "%s": %s. Policy ignored.
+W-Cfg-InvalidRolloverCondPattern Condition "%s" doesn't match required pattern (size > number or every [n] interval [at moment]
+W-Cfg-CompressionNotSupported Line %s: Coaly core library doesn't support compression. 
+W-Cfg-UnknownCompressionAlgorithm Unknown compression algorithm %s.
+W-Cfg-InvalidCompressionAlgorithm Line %s: Unknown compression algorithm %s. Using default value %s.
+W-Cfg-InvalidKeepCount Line %s: Number of old files to keep for rollover policy "%s" must be between %s and %s. Using default value %s.
+W-Cfg-MissingKeepCount Line %s: Number of old files to keep for rollover policy "%s" not specified. Using default value %s.
+W-Cfg-InvalidBufferAttribute Line %s: Unknown attribute "%s" for buffer policy "%s". Allowed are "flush" and "size".
+W-Cfg-MissingBufferContentSize Line %s: No valid buffer content size for buffer policy "%s" specified. Policy ignored.
+W-Cfg-MissingBufferIndexSize Line %s: No valid record index size for buffer policy "%s" specified. Using default value %s.
+W-Cfg-InvalidSizeSpecification Line %s: Invalid size specification "%s" for parameter "%s". Using default value %s.
+W-Cfg-InvOrMissingBufferFlushSpecification Line %s: No valid flush condition for buffer policy "%s" specified. Policy ignored.
+W-Cfg-UnknownBufferFlushCondition Unknown flush condition "%s".
+W-Cfg-InvalidBufferFlushCondition Line %s: Invalid flush condition "%s" for buffer policy "%s" ignored.
+W-Cfg-DuplicateBufferFlushCondition Line %s: Duplicate flush condition "%s" for buffer policy "%s" ignored.
+W-Cfg-RecLenExceedsSize Line %s: Maximum record length for buffer policy "%s" exceeds buffer size. Using buffer size %s.
+W-Cfg-InvalidNumberInInterval Invalid number %s in timespan interval specification.
+W-Cfg-InvalidUnitInInterval Invalid unit %s in timespan interval specification.
+W-Cfg-InvalidRecordFormatHeader Line %s: Output format "%s" not specified as TOML array of tables. Format ignored.
+W-Cfg-InvalidRecordFormatSpecification Line %s: Output format "%s" lacks at least one of the mandatory attributes levels, triggers and items. Format ignored.
+W-Cfg-InvalidDateTimeFormatAttribute Line %s: Unknown attribute "%s" for date time format "%s" ignored. Allowed are date, time and timestamp.
+W-Cfg-InvalidDateTimeFormatSpecifier Line %s: Invalid specifier "%s" in date time format "%s". Format ignored.
+W-Cfg-OutputFormatTriggersEmpty Line %s: Trigger list for output format "%s" is empty. Specification ignored.
+W-Cfg-OutputFormatLevelsEmpty Line %s: Levels list for output format "%s" is empty. Specification ignored.
+W-Cfg-InvalidModesHeader Line %s: Modes must be specified as TOML array of tables.
+W-Cfg-InvalidModeAttribute Line %s: Unknown attribute %s for mode specification ignored. Allowed are trigger, name, value, buffered, enabled and scope.
+W-Cfg-InvalidScope Line %s: Invalid scope %s. Scope for a mode must be specified as string with value process or thread. Using default value thread.
+W-Cfg-InvalidModeSpecification Line %s: Mode specification lacks at least one of the mandatory attributes trigger, name/value and enabled/buffered. Mode ignored.
+W-Cfg-InvalidModeTrigger Line %s: Invalid mode change trigger "%s". Mode ignored.
+W-Cfg-MissingModeName Line %s: For mode change triggers function and module it is mandatory to specify parameter "name". Mode ignored.
+W-Cfg-ModeValueIgnored Line %s: Parameter "value" for mode with trigger function or module ignored.
+W-Cfg-ModeScopeIgnored Line %s: Scope for a mode with trigger function or module is always "thread", parameter "scope" ignored.
+W-Cfg-InvalidResourcesHeader Line %s: Resources must be specified as TOML array of tables.
+W-Cfg-InvalidResourceAttribute Line %s: Unknown attribute "%s" for resource specification ignored. Allowed are kind, scope, name, levels, buffer, output_format, size, local_url and remote_url.
+W-Cfg-InvalidResourceKind Line %s: "%s" is not a valid kind for a resource.
+W-Cfg-InvalidResourceScope Line %s: "%s" is not a valid regular expression for the application names associated with a resource.
+W-Cfg-InvalidResourceSpecification Line %s: Kind and at least one record level must be specified for a resource. Resource ignored.
+W-Cfg-InvalidResourceUrl Line %s: No valid URL specified for network resource, resource ignored.
+W-Cfg-ResourceFileNameMissing Line %s: No file name specified for file resource, resource ignored.
+W-Cfg-FileSizeMissing Line %s: For memory mapped files the size specification is mandatory, resource ignored.
+W-Cfg-RecordFormatIncomplete Line %s: Record format "%s" lacks items for following trigger/level combinations: %s. Using defaults for missing combinations.
+W-Cfg-AnchorMinuteRequired Invalid interval moment "%s", minute between 0 and 59 required
+W-Cfg-AnchorHourMinRequired Invalid interval moment "%s", format hh:mm with hh between 00 and mm between 00 and 59 required
+W-Cfg-AnchorDowHourMinRequired Invalid interval moment "%s", format weekday hh:mm with weekday between monday and sunday, hh between 00 and mm between 00 and 59 required
+W-Cfg-AnchorDomHourMinRequired Invalid interval moment "%s", format dd hh:mm with dd between 1 and 31 or ultimo, hh between 00 and mm between 00 and 59 required
+W-Cfg-AnchorNotAllowed Interval moment "%s" is not allowed for units second and minute
+W-Cfg-MeaninglessResourcePar Line %s: Parameter "%s" is not relevant for a resource of kind "%s". Parameter ignored.
+W-Cfg-MeaninglessRolloverAttr Line %s: Rollover condition "never" does not require further attributes.
+W-Cfg-AnonymousObserverIgnored Line %s: Neither name nor value for observer defined. Mode change specification ignored.
+W-Cfg-InvalidObserverName Line %s: Observer name %s is not a valid regular expression. Mode change specification ignored.
+W-Cfg-InvalidObserverValue Line %s: Observer value %s is not a valid regular expression. Mode change specification ignored.
+W-Cfg-InvalidFallbackPath Path %s is not a valid absolute path, could not be created or is not writable. Using default %s for fallback directory.
+W-Cfg-InvalidOutputPath Path %s is not a valid absolute path, could not be created or is not writable. Using default %s for output directory.

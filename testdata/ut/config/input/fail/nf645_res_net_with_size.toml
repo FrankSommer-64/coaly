@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, size for network interface specified
+##
+[[resources]]
+kind = "network"
+levels = [ "all" ]
+remote_url = "udp://192.168.200.122:7000"
+size = "1g"

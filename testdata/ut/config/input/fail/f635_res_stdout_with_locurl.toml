@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor, local URL for stdout specified
+##
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+local_url = "tcp://127.0.0.1:2345"

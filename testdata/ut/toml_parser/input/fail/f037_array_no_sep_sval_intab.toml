@@ -1,0 +1,2 @@
+# Array: missing separator between simple value and inline table
+array = [ false { x = 2 } ]

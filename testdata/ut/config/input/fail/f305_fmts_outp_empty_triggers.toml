@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format with empty triggers list.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ ]
+  levels = [ "all" ]
+  items = ""

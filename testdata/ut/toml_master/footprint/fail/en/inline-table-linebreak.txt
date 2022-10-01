@@ -1,0 +1,1 @@
+Could not process file %inputfile. Line 1, column 10: Inline table starting here is not terminated.

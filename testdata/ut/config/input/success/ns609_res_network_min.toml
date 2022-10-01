@@ -1,0 +1,7 @@
+##################################################################################################
+## Resource descriptor for network interface with mandatory attributes only
+##
+[[resources]]
+kind = "network"
+levels = [ "all" ]
+remote_url = "udp://192.168.200.122:7000"

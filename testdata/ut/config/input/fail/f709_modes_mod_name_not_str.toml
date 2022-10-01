@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor for module, non-string value for name attribute
+##
+[[modes]]
+trigger = "module"
+name = 123.05
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

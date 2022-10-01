@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format, levels and triggers specified as strings
+##
+[formats]
+  [[formats.output.my_default]]
+  levels = "all"
+  triggers = "all"
+  items = "$Date $Message"

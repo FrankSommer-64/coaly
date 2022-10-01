@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format with invalid level, but no valid levels.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "message" ]
+  levels = [ "other" ]
+  items = ""

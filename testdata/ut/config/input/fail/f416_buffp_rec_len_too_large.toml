@@ -1,0 +1,8 @@
+##################################################################################################
+## Buffer policy with maximum record length specification larger than buffer size
+##
+[policies.buffer.my_default]
+flush = [ "error" ]
+content_size = 1_000_000
+index_size = 50_000
+max_record_length = 2_000_000

@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor, size for file specified
+##
+[[resources]]
+kind = "file"
+levels = [ "all" ]
+name = "coaly.log"
+size = 10_000_000

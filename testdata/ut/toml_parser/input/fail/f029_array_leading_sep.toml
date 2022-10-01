@@ -1,0 +1,2 @@
+# Array: leading separator before value
+array = [ , "hello" ]

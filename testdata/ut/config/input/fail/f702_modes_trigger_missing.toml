@@ -1,0 +1,8 @@
+##################################################################################################
+## Mode change descriptor without trigger
+##
+[[modes]]
+name = "my_mode"
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

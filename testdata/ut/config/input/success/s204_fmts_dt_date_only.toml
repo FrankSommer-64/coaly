@@ -1,0 +1,6 @@
+##################################################################################################
+## Date-time format with custom date only.
+##
+[formats]
+  [formats.datetime]
+  my_default = { date = "%d.%m.%y(%Y)" }

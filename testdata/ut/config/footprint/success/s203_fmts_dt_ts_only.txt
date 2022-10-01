@@ -1,0 +1,1 @@
+DEF:{N:/DT:-/TM:-/TS:-}/CUST:{my_default:N:my_default/DT:-/TM:-/TS:%d.%m.%y-%H:%M:%S.%3fT%z(%Z)}

@@ -1,0 +1,28 @@
+# Separator|TestCaseName|Input|OK/ERR|ExpectKey(true/false)|TokenId|ValueType|StringValue|SpecificValue|ExceptionId
+|MlBasicStringExample|"""Roses are read\nViolets are blue."""|OK|false|Value|String|Roses are read\nViolets are blue.||
+|MlBasicStringTab|"""Field1\tField2\tField3"""|OK|false|Value|String|Field1\tField2\tField3||
+|MlBasicStringEmpty|""""""|OK|false|Value|String|||
+|MlBasicStringOneDelim|"""""""|OK|false|Value|String|"||
+|MlBasicStringOneEscapedDelim|"""\\""""|OK|false|Value|String|"||
+|MlBasicStringTwoDelim|""""""""|OK|false|Value|String|""||
+|MlBasicStringTwoEscapedDelim|"""\\"\\""""|OK|false|Value|String|""||
+|MlBasicStringThreeDelim|"""""\\""""|OK|false|Value|String|"""||
+|MlBasicStringValidEscapeSequences|"""\\b\\t\\n\\f\\r\\\\\\"\\u0020\\U00101234"""|OK|false|Value|String|\b\t\n\f\r\\"\u{20}\u{101234}||
+|MlBasicStringTrimmedLineFeed|"""\nHello"""|OK|false|Value|String|Hello||
+|MlBasicStringTrimmedCrLineFeed|"""\r\nHello"""|OK|false|Value|String|Hello||
+|MlBasicStringMeaningfulLineFeed|"""\\nHello"""|OK|false|Value|String|\nHello||
+|MlBasicStringMeaningfulCrLineFeed|"""\\r\\nHello"""|OK|false|Value|String|\r\nHello||
+|MlBasicStringLineEndingBackslash1Lf|"""\nThe quick brown \\\n\n\n  fox jumps over \\\n    the lazy dog."""|OK|false|Value|String|The quick brown fox jumps over the lazy dog.||
+|MlBasicStringLineEndingBackslash1CrLf|"""\r\nThe quick brown \\\r\n\r\n\r\n  fox jumps over \\\r\n    the lazy dog."""|OK|false|Value|String|The quick brown fox jumps over the lazy dog.||
+|MlBasicStringLineEndingBackslash2Lf|"""\\\r\n\tThe quick brown \\\r\n\tfox jumps over \\\r\n\tthe lazy dog.\\\r\n\t"""|OK|false|Value|String|The quick brown fox jumps over the lazy dog.||
+|MlBasicStringLineEndingBackslash2CrLf|"""\\\n\tThe quick brown \\\n\tfox jumps over \\\n\tthe lazy dog.\\\n\t"""|OK|false|Value|String|The quick brown fox jumps over the lazy dog.||
+|MlBasicStringTooManyQuotes|"""""""""|ERR|false|||||TooManyQuotes
+|MlBasicStringInvalidValidEscapeChar|"""\\q"""|ERR|false|||||InvalidEscapeChar
+|MlBasicStringInvalidUnicodeEscValue16|"""\\uD888"""|ERR|false|||||InvalidUnicodeEscapeSeq
+|MlBasicStringInvalidUnicodeEscValue32|"""\\U11223344"""|ERR|false|||||InvalidUnicodeEscapeSeq
+|MlBasicStringUnicodeEscSeqTooShort16|"""\\u123"""|ERR|false|||||InvalidUnicodeEscapeChar
+|MlBasicStringUnicodeEscSeqTooShort32|"""\\U1234567"""|ERR|false|||||InvalidUnicodeEscapeChar
+|MlBasicStringInvalidUnicodeEscSeqChar16|"""\\u12x3"""|ERR|false|||||InvalidUnicodeEscapeChar
+|MlBasicStringInvalidUnicodeEscSeqChar32|"""\\U000012x3"""|ERR|false|||||InvalidUnicodeEscapeChar
+|MlBasicStringNullAfterOpeningDelimiter|"""|ERR|false|||||UnterminatedString
+|MlBasicStringNullAfterEscape|"""\\|ERR|false|||||UnterminatedString

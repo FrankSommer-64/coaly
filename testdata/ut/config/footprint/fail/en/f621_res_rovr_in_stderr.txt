@@ -1,0 +1,2 @@
+DEF:{S:[0]/K:file/L:11111111111/BP:-/OF:-/SD:N:coaly.log/SZ:0/RP:-}/CUST:{S:[0]/K:stderr/L:11111111111/BP:-/OF:-/SD:}
+Line 7: Parameter "rollover" is not relevant for a resource of kind "stderr". Parameter ignored.

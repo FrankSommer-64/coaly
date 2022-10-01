@@ -1,0 +1,5 @@
+##################################################################################################
+## Invalid types for all possible server properties
+##
+[server]
+  data_addr = { ip="127.0.0.1", port=2345 }

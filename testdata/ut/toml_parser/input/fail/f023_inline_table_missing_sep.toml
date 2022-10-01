@@ -1,0 +1,2 @@
+# Inline table: missing separator between key-value-pairs
+inline_table = {x=2 y=true}

@@ -1,0 +1,9 @@
+##################################################################################################
+## Mode change descriptor for function, non-string value for name attribute
+##
+[[modes]]
+trigger = "function"
+name = true
+enabled = [ "all" ]
+buffered = [ "all" ]
+scope = "thread"

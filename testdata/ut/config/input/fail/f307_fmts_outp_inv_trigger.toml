@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format with invalid trigger.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "all", "other" ]
+  levels = [ "all" ]
+  items = ""

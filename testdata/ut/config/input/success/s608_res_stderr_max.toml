@@ -1,0 +1,8 @@
+##################################################################################################
+## Resource descriptor for standard error with all possible attributes
+##
+[[resources]]
+kind = "stderr"
+levels = [ "all" ]
+output_format = "my_out_fmt"
+buffer = "my_buff_policy"

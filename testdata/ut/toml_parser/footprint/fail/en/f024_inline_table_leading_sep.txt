@@ -1,0 +1,1 @@
+Could not process file %inputfile. Line 2, column 18: Inline table or array contents must not start with a comma.

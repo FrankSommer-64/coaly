@@ -1,0 +1,9 @@
+##################################################################################################
+## Resource descriptor, buffer policy specified for memory mapped file
+##
+[[resources]]
+kind = "mmfile"
+levels = [ "all" ]
+buffer = "my_buf_policy"
+name = "coaly.log"
+size = "50M"

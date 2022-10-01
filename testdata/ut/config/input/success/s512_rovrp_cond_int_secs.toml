@@ -1,0 +1,7 @@
+##################################################################################################
+## Rollover policy with interval condition 30 seconds.
+##
+[policies.rollover.my_default]
+condition = "every 30 seconds"
+keep = 9
+compression = ""

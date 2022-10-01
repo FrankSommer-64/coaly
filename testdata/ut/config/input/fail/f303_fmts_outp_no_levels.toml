@@ -1,0 +1,8 @@
+##################################################################################################
+## Output format without triggers.
+##
+[formats]
+  [[formats.output.my_format]]
+  triggers = [ "message" ]
+  datetime_format = "output_default"
+  items = "$TimeStamp|$LevelId|$SourceFileName:$SourceLineNr|$Message"

@@ -1,0 +1,6 @@
+##################################################################################################
+## Same level ID character used as another, not specified level
+##
+[system]
+  [system.levels]
+  debug = { id='E' }

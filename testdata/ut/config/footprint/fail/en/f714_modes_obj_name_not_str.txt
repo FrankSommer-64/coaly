@@ -1,0 +1,2 @@
+{GO:[]/LO:[{SC:thread/K:object/N:-/V:OK_*/ENA:11111111111/BUF:11111111111}]/LU:[]}
+Line 6: Parameter "modes.name" requires a string value.

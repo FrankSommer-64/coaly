@@ -1,0 +1,1 @@
+Could not process file %inputfile. Line 1, column 10: Two consecutive dots in a key are not allowed.
