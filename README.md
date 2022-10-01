@@ -1,20 +1,14 @@
 # Coaly
 
-[![Test Status](https://github.com/rust-random/rand/workflows/Tests/badge.svg?event=push)](https://github.com/rust-random/rand/actions)
-[![Crate](https://img.shields.io/crates/v/rand.svg)](https://crates.io/crates/rand)
-[![Book](https://img.shields.io/badge/book-master-yellow.svg)](https://rust-random.github.io/book/)
-[![API](https://img.shields.io/badge/api-master-yellow.svg)](https://rust-random.github.io/rand/rand)
-[![API](https://docs.rs/rand/badge.svg)](https://docs.rs/rand)
-[![Minimum rustc version](https://img.shields.io/badge/rustc-1.36+-lightgray.svg)](https://github.com/rust-random/rand#rust-version-requirements)
 
 A Rust library for logging and tracing.
 There are various libraries for that purpose around, but especially in situations where direct debugging
-isn't possible or spurious errors must be tracked down, Ariadne can be worth a try
+isn't possible or spurious errors must be tracked down, Coaly can be worth a try
 due to some unique features:
 
 - Event based output mode for log and trace messages. Output mode means filtering of messages according to their
   associated level (e.g. error or warning). Usually, the output mode is defined once upon application start and on a
-  per-module basis. In Ariadne, the default output mode is set upon application start and may change whenever
+  per-module basis. In Coaly, the default output mode is set upon application start and may change whenever
   configurable events like a certain function call or structure instantiation occur.
 - Configurable formatting of log and trace messages
 - Support for output resource types file, memory mapped file, console and network
@@ -33,7 +27,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-coaly = "0.9.0"
+coaly = "0.1.0"
 ```
 
 To get started using Coaly, view the sample configuration file in the doc folder.
@@ -45,7 +39,7 @@ Coaly is still under construction.
 
 Current Coaly versions are:
 
--   Version 0.9.0 is feature complete, but still widely untested.
+-   Version 0.1.0 is feature complete, but still widely untested.
 
 A detailed [changelog](CHANGELOG.md) is available for releases.
 
