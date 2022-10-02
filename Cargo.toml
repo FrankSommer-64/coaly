@@ -44,7 +44,7 @@ include = ["doc/", "src/", "systemtest/", "testdata/", "LICENSE*", "README.md", 
 keywords = ["logging", "tracing"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/coaly"
+repository = "https://github.com/FrankSommer-64/coaly"
 
 [package.metadata.docs.rs]
 all-features = true
