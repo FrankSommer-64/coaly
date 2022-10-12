@@ -1,0 +1,18 @@
+###################################################################################################
+## Simple Coaly configuration file for demo application.
+###################################################################################################
+
+# at startup, enable all record levels up to 'info', don't use buffering
+[system.mode]
+enabled = [ "logs" ]
+buffered = [ ]
+
+[[resources]]
+kind = "stdout"
+levels = [ "all" ]
+
+# enable all record levels, whenever an observer object with the name '123' is created
+[[modes]]
+trigger = "object"
+name = "123"
+enabled = [ "all" ]

@@ -289,7 +289,7 @@ impl ModeChangeDescList {
                 observer_value: Option<&str>) -> u32 {
         for desc in descs.iter() {
             if desc.applies_to(observer_name, observer_value) {
-                return (desc.buffered_levels << 16) | desc.enabled_levels
+                return (desc.buffered_levels << 16) | (desc.enabled_levels & 0xffff)
             }
         }
         u32::MAX

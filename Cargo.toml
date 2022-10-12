@@ -32,15 +32,15 @@
 
 [package]
 name = "coaly"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Frank Sommer <fs@sherpa-software.de>"]
 edition = "2021"
 autobenches = true
 autobins = false
-categories = ["tools", "no-std"]
+categories = ["development-tools"]
 description = "Context aware logging and tracing library.\n"
-documentation = "https://docs.rs/crate/coaly/0.1.0"
-include = ["doc/", "src/", "systemtest/", "testdata/", "LICENSE*", "README.md", "CHANGELOG.md", "COPYRIGHT", "SECURITY.md"]
+documentation = "https://docs.rs/crate/coaly/0.1.1"
+include = ["doc/", "src/", "systemtest/", "testdata/", "LICENSE*", "README.md", "CHANGELOG.md", "ROADMAP.md", "COPYRIGHT", "SECURITY.md"]
 keywords = ["logging", "tracing"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
@@ -53,6 +53,9 @@ rustdoc-args = ["--cfg", "doc_cfg"]
 [lib]
 name = "coaly"
 path = "src/lib.rs"
+
+[[example]]
+name = "coaly_demo"
 
 [[test]]
 name = "systemtest"

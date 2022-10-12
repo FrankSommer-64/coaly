@@ -18,7 +18,7 @@ due to some unique features:
 Documentation:
 
 -   [API reference (master branch)](https://github.com/FrankSommer-64/coaly)
--   [API reference (docs.rs)](https://docs.rs/crate/coaly/0.1.0)
+-   [API reference (docs.rs)](https://docs.rs/crate/coaly/0.1.1)
 
 
 ## Usage
@@ -27,10 +27,11 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-coaly = "0.1.0"
+coaly = "0.1.1"
 ```
 
-To get started using Coaly, view the sample configuration file in the doc folder.
+To get started using Coaly, view the demo application in the examples folder.  
+The doc folder contains a configuration file with all available parameters.
 
 
 ## Versions
@@ -39,9 +40,10 @@ Coaly is still under construction.
 
 Current Coaly versions are:
 
--   Version 0.1.0 - feature complete, but still widely untested
+-   Version 0.1.1 - feature complete, but still widely untested
 
-A detailed [changelog](CHANGELOG.md) is available for releases.
+A detailed [changelog](CHANGELOG.md) is available for releases.  
+For planned releases check roadmap.pdf in the doc folder.
 
 
 ### Rust version requirements
